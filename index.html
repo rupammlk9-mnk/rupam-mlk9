@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rupam Mallick — Operations Leader at DoorDash | Contact Center Operations, Customer Experience (Consumer, Dasher, Merchant), Analytics & BI, Lean Six Sigma Black Belt.">
-<title>Rupam Mallick — DoorDash Operations Leader | Customer Experience & BI</title>
+<meta name="description" content="Rupam Mallick — Operations Leader at DoorDash | US Healthcare Transitions, Vendor Operations, Quality & AI Governance, Analytics & BI, Lean Six Sigma Black Belt.">
+<title>Rupam Mallick — Operations, Transition & Quality Leader | DoorDash</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -13,43 +13,46 @@
   --dd-red: #FF3008;
   --dd-red-cta: #EB1700;
   --dd-red-dark: #B81100;
-  --dd-red-soft: #FFF0ED;
-  --dd-red-border: #FFD4CC;
-  --bg-canvas: #FFFDF9;
-  --bg-soft: #F5F4F0;
-  --bg-card: #FFFFFF;
-  --bg-glass: rgba(255, 253, 249, 0.90);
-  --ink: #191919;
-  --ink-secondary: #484848;
-  --muted: #6E6E6E;
-  --line: #E6E4E0;
-  --green: #12804A;
-  --green-soft: #E7F7EF;
-  --amber: #D97706;
-  --shadow-sm: 0 6px 20px rgba(25, 25, 25, 0.05);
-  --shadow-lg: 0 24px 60px rgba(25, 25, 25, 0.10);
+  --dd-red-soft: rgba(255, 48, 8, 0.14);
+  --dd-red-border: rgba(255, 48, 8, 0.34);
+  --bg-canvas: #0B0C10;
+  --bg-soft: rgba(20, 22, 29, 0.82);
+  --bg-card: rgba(24, 27, 36, 0.86);
+  --bg-glass: rgba(11, 12, 16, 0.86);
+  --ink: #F5F6F8;
+  --ink-secondary: #C6C9D4;
+  --muted: #8E93A4;
+  --line: rgba(255, 255, 255, 0.09);
+  --green: #32D583;
+  --green-soft: rgba(50, 213, 131, 0.14);
+  --blue: #38BDF8;
+  --amber: #F59E0B;
+  --shadow-sm: 0 8px 26px rgba(0, 0, 0, 0.36);
+  --shadow-lg: 0 28px 70px rgba(0, 0, 0, 0.65);
   --radius-lg: 26px;
   --radius-md: 18px;
 }
 
-[data-theme="dark"] {
-  --dd-red: #FF4422;
-  --dd-red-cta: #FF3008;
-  --dd-red-dark: #FF6247;
-  --dd-red-soft: rgba(255, 48, 8, 0.14);
-  --dd-red-border: rgba(255, 48, 8, 0.32);
-  --bg-canvas: #0D0E11;
-  --bg-soft: #14161B;
-  --bg-card: #1A1D24;
-  --bg-glass: rgba(13, 14, 17, 0.90);
-  --ink: #F5F6F8;
-  --ink-secondary: #C5C8D2;
-  --muted: #8C909E;
-  --line: #272B35;
-  --green: #32D583;
-  --green-soft: rgba(50, 213, 131, 0.14);
-  --shadow-sm: 0 6px 22px rgba(0, 0, 0, 0.40);
-  --shadow-lg: 0 26px 65px rgba(0, 0, 0, 0.60);
+[data-theme="light"] {
+  --dd-red: #FF3008;
+  --dd-red-cta: #EB1700;
+  --dd-red-dark: #B81100;
+  --dd-red-soft: #FFF0ED;
+  --dd-red-border: #FFD4CC;
+  --bg-canvas: #FFFDF9;
+  --bg-soft: rgba(245, 244, 240, 0.88);
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-glass: rgba(255, 253, 249, 0.88);
+  --ink: #171717;
+  --ink-secondary: #454545;
+  --muted: #6E6E6E;
+  --line: rgba(25, 25, 25, 0.10);
+  --green: #12804A;
+  --green-soft: #E7F7EF;
+  --blue: #0284C7;
+  --amber: #D97706;
+  --shadow-sm: 0 6px 20px rgba(25, 25, 25, 0.06);
+  --shadow-lg: 0 24px 60px rgba(25, 25, 25, 0.11);
 }
 
 * {
@@ -68,8 +71,36 @@ body {
   background: var(--bg-canvas);
   color: var(--ink);
   line-height: 1.65;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Interactive Live Telemetry Background Canvas */
+#bgCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(255, 48, 8, 0.14), transparent 36%),
+    radial-gradient(circle at 12% 78%, rgba(56, 189, 248, 0.07), transparent 34%),
+    radial-gradient(circle at 50% 45%, rgba(255, 48, 8, 0.05), transparent 45%);
+}
+
+nav, header, section, .stats-section, footer {
+  position: relative;
+  z-index: 2;
 }
 
 a {
@@ -78,7 +109,7 @@ a {
 }
 
 .container {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
 }
 
@@ -86,10 +117,10 @@ a {
 nav {
   position: sticky;
   top: 0;
-  z-index: 60;
+  z-index: 80;
   background: var(--bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -98,7 +129,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
 }
 
 .brand {
@@ -115,14 +146,14 @@ nav {
   width: 36px;
   height: 36px;
   border-radius: 11px;
-  background: var(--dd-red);
+  background: linear-gradient(135deg, #FF3008 0%, #B81100 100%);
   color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: 800;
-  box-shadow: 0 6px 16px rgba(255, 48, 8, 0.32);
+  box-shadow: 0 6px 18px rgba(255, 48, 8, 0.38);
 }
 
 .brand span {
@@ -133,12 +164,11 @@ nav {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
   font-weight: 700;
-  padding: 3px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
   background: var(--dd-red-soft);
   color: var(--dd-red);
   border: 1px solid var(--dd-red-border);
-  margin-left: 4px;
 }
 
 .nav-links {
@@ -148,9 +178,9 @@ nav {
 }
 
 .nav-links a {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
-  padding: 8px 13px;
+  padding: 8px 12px;
   border-radius: 999px;
   color: var(--ink-secondary);
   transition: all 0.2s ease;
@@ -190,14 +220,15 @@ nav {
 .nav-cta {
   background: var(--dd-red-cta);
   color: #fff !important;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
-  padding: 10px 18px;
+  padding: 10px 16px;
   border-radius: 999px;
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 8px 20px rgba(235, 23, 0, 0.28);
+  transition: all 0.2s ease;
 }
 
 .nav-cta:hover {
@@ -205,25 +236,80 @@ nav {
   transform: translateY(-1px);
 }
 
-@media (max-width: 920px) {
+@media (max-width: 980px) {
   .nav-links, .brand-sub {
     display: none;
   }
 }
 
+/* Executive Role Persona Switcher Bar */
+.persona-bar {
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+  padding: 11px 0;
+  backdrop-filter: blur(12px);
+}
+
+.persona-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.persona-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.persona-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.persona-btn {
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--ink-secondary);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.persona-btn:hover {
+  border-color: var(--dd-red);
+  color: var(--dd-red);
+}
+
+.persona-btn.active {
+  background: var(--dd-red);
+  color: #fff;
+  border-color: var(--dd-red);
+  box-shadow: 0 4px 14px rgba(255, 48, 8, 0.35);
+}
+
 /* Hero Section */
 .hero {
-  padding: 72px 0 60px;
-  position: relative;
-  background:
-    radial-gradient(circle at 86% 14%, rgba(255, 48, 8, 0.11), transparent 34%),
-    radial-gradient(circle at 8% 82%, rgba(255, 48, 8, 0.05), transparent 28%);
+  padding: 60px 0 54px;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 44px;
+  gap: 42px;
   align-items: center;
 }
 
@@ -237,7 +323,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
 }
 
 .kicker {
@@ -248,7 +334,7 @@ nav {
   background: var(--dd-red-soft);
   border: 1px solid var(--dd-red-border);
   border-radius: 999px;
-  padding: 7px 14px;
+  padding: 6px 13px;
   font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.4px;
@@ -270,14 +356,14 @@ nav {
   100% { box-shadow: 0 0 0 0 rgba(255, 48, 8, 0); }
 }
 
-.lssbb-tag {
+.badge-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 7px 13px;
+  padding: 6px 12px;
   font-size: 11.5px;
   font-weight: 700;
   color: var(--ink-secondary);
@@ -285,10 +371,10 @@ nav {
 
 .hero h1 {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(44px, 6vw, 70px);
+  font-size: clamp(42px, 5.8vw, 68px);
   line-height: 0.98;
-  letter-spacing: -2.5px;
-  margin: 20px 0 16px;
+  letter-spacing: -2.4px;
+  margin: 18px 0 14px;
 }
 
 .hero h1 span {
@@ -296,25 +382,42 @@ nav {
 }
 
 .subtitle {
-  font-size: clamp(17px, 2vw, 20.5px);
-  font-weight: 600;
+  font-size: clamp(16.5px, 1.9vw, 20px);
+  font-weight: 700;
   color: var(--ink);
-  max-width: 680px;
+  max-width: 690px;
   line-height: 1.4;
 }
 
 .summary {
   color: var(--ink-secondary);
-  font-size: 15.5px;
-  max-width: 680px;
-  margin-top: 16px;
+  font-size: 15px;
+  max-width: 690px;
+  margin-top: 14px;
+}
+
+.contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.contact-strip span {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 5px 11px;
+  border-radius: 8px;
 }
 
 .actions {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .btn {
@@ -322,9 +425,9 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 13px 21px;
+  padding: 12px 20px;
   border-radius: 999px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   border: 1px solid var(--line);
   cursor: pointer;
@@ -336,7 +439,7 @@ nav {
   background: var(--dd-red-cta);
   color: #fff;
   border-color: var(--dd-red-cta);
-  box-shadow: 0 10px 24px rgba(235, 23, 0, 0.24);
+  box-shadow: 0 10px 24px rgba(235, 23, 0, 0.28);
 }
 
 .btn-primary:hover {
@@ -357,12 +460,12 @@ nav {
 
 /* DoorDash Marketplace Command Console (Hero Right) */
 .command-card {
-  background: #121318;
+  background: #111319;
   color: #FFFFFF;
   border-radius: 28px;
   padding: 26px;
   box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   position: relative;
   overflow: hidden;
 }
@@ -370,11 +473,11 @@ nav {
 .command-card::before {
   content: "";
   position: absolute;
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 48, 8, 0.26) 0%, transparent 70%);
-  top: -90px;
+  background: radial-gradient(circle, rgba(255, 48, 8, 0.28) 0%, transparent 70%);
+  top: -100px;
   right: -90px;
   pointer-events: none;
 }
@@ -410,7 +513,7 @@ nav {
 
 .cmd-title h2 {
   font-family: 'Manrope', sans-serif;
-  font-size: 18.5px;
+  font-size: 18px;
   font-weight: 800;
 }
 
@@ -422,11 +525,11 @@ nav {
 
 .live-pill {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
-  background: rgba(18, 128, 74, 0.24);
+  background: rgba(50, 213, 131, 0.18);
   color: #4AE38C;
-  border: 1px solid rgba(74, 227, 140, 0.32);
+  border: 1px solid rgba(74, 227, 140, 0.35);
   padding: 5px 10px;
   border-radius: 999px;
   white-space: nowrap;
@@ -434,12 +537,11 @@ nav {
 
 /* 3-Sided Marketplace Dispatch Telemetry Stage */
 .dispatch-stage {
-  background: #1B1D24;
+  background: #191C24;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
   padding: 14px 16px;
   margin-bottom: 14px;
-  position: relative;
 }
 
 .stage-header {
@@ -464,7 +566,7 @@ nav {
 
 .route-path {
   stroke-dasharray: 6 6;
-  animation: dashMove 10s linear infinite;
+  animation: dashMove 9s linear infinite;
 }
 
 @keyframes dashMove {
@@ -473,12 +575,11 @@ nav {
   }
 }
 
-/* Interactive LOB Switcher inside Hero Card */
 .lob-tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  background: #1B1D24;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  background: #191C24;
   padding: 5px;
   border-radius: 14px;
   margin-bottom: 12px;
@@ -489,9 +590,9 @@ nav {
   border: 0;
   color: #9CA0AE;
   font-family: inherit;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
-  padding: 8px 6px;
+  padding: 8px 4px;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -509,13 +610,15 @@ nav {
   padding: 13px 15px;
   font-size: 12.5px;
   color: #D5D7DF;
+  min-height: 84px;
 }
 
 .lob-panel-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
+  gap: 8px;
 }
 
 .lob-panel-head strong {
@@ -525,11 +628,12 @@ nav {
 
 .lob-kpi-tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
+  font-size: 10px;
   color: #FF856D;
-  background: rgba(255, 48, 8, 0.16);
+  background: rgba(255, 48, 8, 0.18);
   padding: 2px 8px;
   border-radius: 6px;
+  white-space: nowrap;
 }
 
 .cmd-meta {
@@ -554,42 +658,41 @@ nav {
   font-weight: 700;
 }
 
-/* KPI Stats Strip */
+/* 6-Card Animated KPI Strip */
 .stats-section {
-  padding: 6px 0 38px;
+  padding: 6px 0 42px;
 }
 
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
+  .stat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .stat-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 520px) {
-  .stat-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .stat-card {
   background: var(--bg-card);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 18px;
   box-shadow: var(--shadow-sm);
-  position: relative;
-  overflow: hidden;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: var(--dd-red);
 }
 
@@ -597,12 +700,12 @@ nav {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 8px;
+  gap: 6px;
 }
 
 .stat-val {
   font-family: 'Manrope', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 800;
   color: var(--dd-red);
   letter-spacing: -1px;
@@ -610,44 +713,48 @@ nav {
 
 .stat-badge {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 9.5px;
   font-weight: 700;
-  padding: 3px 7px;
+  padding: 3px 6px;
   border-radius: 6px;
   background: var(--dd-red-soft);
   color: var(--dd-red);
 }
 
 .stat-label {
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--ink);
   margin-top: 6px;
 }
 
 .stat-sub {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--muted);
   margin-top: 2px;
 }
 
 .stat-bar {
   height: 4px;
-  background: var(--bg-soft);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 99px;
-  margin-top: 12px;
+  margin-top: 11px;
   overflow: hidden;
+}
+
+[data-theme="light"] .stat-bar {
+  background: #ECEAE5;
 }
 
 .stat-bar-fill {
   height: 100%;
-  background: var(--dd-red);
+  background: linear-gradient(90deg, var(--dd-red) 0%, #FF7A59 100%);
   border-radius: 99px;
 }
 
 /* Section Scaffolding */
 section {
-  padding: 76px 0;
+  padding: 72px 0;
 }
 
 .section-head {
@@ -656,12 +763,12 @@ section {
   align-items: flex-end;
   flex-wrap: wrap;
   gap: 20px;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .eyebrow {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
@@ -670,27 +777,29 @@ section {
 
 .section-title {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(28px, 3.8vw, 42px);
-  letter-spacing: -1.3px;
+  font-size: clamp(28px, 3.6vw, 40px);
+  letter-spacing: -1.2px;
   margin-top: 6px;
-  line-height: 1.1;
+  line-height: 1.12;
 }
 
 .section-lede {
   color: var(--ink-secondary);
-  max-width: 660px;
-  margin-top: 10px;
-  font-size: 15.5px;
+  max-width: 680px;
+  margin-top: 8px;
+  font-size: 15px;
 }
 
-/* Executive WBR / MBR & Wave 0 Command Blueprint Section */
+/* Deep-Dive Analytical Command Center */
 .wbr-section {
   background: var(--bg-soft);
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .wbr-console {
   background: var(--bg-card);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--line);
   border-radius: 26px;
   padding: 28px;
@@ -703,9 +812,9 @@ section {
   align-items: center;
   flex-wrap: wrap;
   gap: 14px;
-  padding-bottom: 20px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--line);
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .wbr-tabs {
@@ -715,16 +824,21 @@ section {
 }
 
 .wbr-tab {
-  padding: 9px 16px;
+  padding: 9px 15px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--bg-soft);
   color: var(--ink-secondary);
   font-family: inherit;
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+
+.wbr-tab:hover {
+  border-color: var(--dd-red);
+  color: var(--dd-red);
 }
 
 .wbr-tab.active {
@@ -747,14 +861,20 @@ section {
   gap: 14px;
 }
 
-@media (max-width: 860px) {
-  .wbr-grid-4 {
+.wbr-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 980px) {
+  .wbr-grid-4, .wbr-grid-5 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 520px) {
-  .wbr-grid-4 {
+@media (max-width: 560px) {
+  .wbr-grid-4, .wbr-grid-5 {
     grid-template-columns: 1fr;
   }
 }
@@ -764,6 +884,11 @@ section {
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
+  transition: border-color 0.2s ease;
+}
+
+.telemetry-box:hover {
+  border-color: var(--dd-red);
 }
 
 .telemetry-box .t-head {
@@ -771,20 +896,20 @@ section {
   justify-content: space-between;
   align-items: center;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--muted);
 }
 
 .telemetry-box .t-num {
   font-family: 'Manrope', sans-serif;
-  font-size: 27px;
+  font-size: 23px;
   font-weight: 800;
   color: var(--ink);
   margin: 8px 0 4px;
 }
 
 .telemetry-box .t-delta {
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--green);
 }
@@ -811,6 +936,7 @@ section {
 .pareto-top {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   font-size: 13.5px;
   font-weight: 700;
   margin-bottom: 6px;
@@ -819,6 +945,7 @@ section {
 .pareto-top span:last-child {
   font-family: 'JetBrains Mono', monospace;
   color: var(--dd-red);
+  white-space: nowrap;
 }
 
 .pareto-track {
@@ -860,6 +987,8 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .velocity-steps {
@@ -868,7 +997,7 @@ section {
   gap: 10px;
 }
 
-@media (max-width: 820px) {
+@media (max-width: 860px) {
   .velocity-steps {
     grid-template-columns: 1fr;
   }
@@ -910,17 +1039,17 @@ section {
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
 .filter-btn {
-  padding: 8px 15px;
+  padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--bg-card);
   color: var(--ink-secondary);
   font-family: inherit;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -938,12 +1067,6 @@ section {
 }
 
 /* Experience Timeline */
-.experience {
-  background: var(--bg-soft);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
 .timeline {
   display: grid;
   gap: 20px;
@@ -951,6 +1074,7 @@ section {
 
 .job {
   background: var(--bg-card);
+  backdrop-filter: blur(14px);
   border: 1px solid var(--line);
   border-radius: 24px;
   padding: 30px;
@@ -985,14 +1109,14 @@ section {
 
 .job h3 {
   font-family: 'Manrope', sans-serif;
-  font-size: 22px;
+  font-size: 21.5px;
   letter-spacing: -0.4px;
 }
 
 .company {
   color: var(--dd-red);
   font-weight: 800;
-  font-size: 14.5px;
+  font-size: 14px;
   margin-top: 4px;
   display: flex;
   align-items: center;
@@ -1022,7 +1146,7 @@ section {
   border: 1px solid var(--dd-red-border);
   border-radius: 999px;
   padding: 6px 13px;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 700;
 }
 
@@ -1030,7 +1154,7 @@ section {
   color: var(--muted);
   font-size: 13.5px;
   font-weight: 600;
-  margin: 10px 0 16px;
+  margin: 9px 0 15px;
 }
 
 .job-metrics-strip {
@@ -1042,17 +1166,29 @@ section {
 
 .jm-chip {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
   background: var(--bg-soft);
   border: 1px solid var(--line);
   color: var(--ink);
-  padding: 5px 11px;
+  padding: 5px 10px;
   border-radius: 8px;
 }
 
 .jm-chip b {
   color: var(--dd-red);
+}
+
+.job-pillar-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--dd-red);
+  margin: 16px 0 8px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
 }
 
 .job ul {
@@ -1061,8 +1197,8 @@ section {
 }
 
 .job li {
-  margin: 9px 0;
-  font-size: 14.5px;
+  margin: 8px 0;
+  font-size: 14px;
   transition: opacity 0.25s ease;
 }
 
@@ -1071,22 +1207,34 @@ section {
 }
 
 .job li.dimmed {
-  opacity: 0.25;
+  opacity: 0.22;
 }
 
 .job li.highlighted {
   color: var(--ink);
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* Core Competencies */
+/* Core Competencies (6-Pillar Grid) */
+.skills-section {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 960px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .skills-grid {
     grid-template-columns: 1fr;
   }
@@ -1096,7 +1244,7 @@ section {
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: 22px;
-  padding: 26px;
+  padding: 24px;
   box-shadow: var(--shadow-sm);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
@@ -1111,41 +1259,38 @@ section {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
+  gap: 10px;
 }
 
 .skill-card h3 {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--dd-red);
   text-transform: uppercase;
-  letter-spacing: 0.9px;
+  letter-spacing: 0.8px;
   font-weight: 800;
 }
 
 .skill-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  padding: 4px 8px;
+  border-radius: 8px;
   background: var(--dd-red-soft);
   color: var(--dd-red);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 11px;
   font-family: 'JetBrains Mono', monospace;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 12px;
+  gap: 6px;
+  margin-top: 10px;
 }
 
 .skill-tag {
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 600;
-  padding: 6px 12px;
+  padding: 5px 11px;
   border-radius: 999px;
   background: var(--bg-soft);
   color: var(--ink-secondary);
@@ -1153,20 +1298,14 @@ section {
 }
 
 /* Categorized Tools Section */
-.tools-section {
-  background: var(--bg-soft);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
 .pills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 11px;
 }
 
 .tool-pill {
-  padding: 14px 16px;
+  padding: 13px 15px;
   border-radius: 16px;
   background: var(--bg-card);
   border: 1px solid var(--line);
@@ -1188,21 +1327,26 @@ section {
 
 .tool-name {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--ink);
 }
 
 .tool-cat {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--dd-red);
   text-transform: uppercase;
 }
 
 /* Credentials & Awards */
+.credentials-section {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+}
+
 .credentials-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 18px;
 }
 
@@ -1216,14 +1360,14 @@ section {
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: 22px;
-  padding: 28px;
+  padding: 26px;
   box-shadow: var(--shadow-sm);
 }
 
 .credential-card h3 {
   font-family: 'Manrope', sans-serif;
   font-size: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .clean-list {
@@ -1231,9 +1375,9 @@ section {
 }
 
 .clean-list li {
-  padding: 11px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--line);
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--ink-secondary);
   display: flex;
   align-items: flex-start;
@@ -1252,13 +1396,13 @@ section {
 
 .awards-banner {
   margin-top: 22px;
-  background: #121318;
+  background: #111319;
   color: #fff;
   border-radius: 28px;
-  padding: 40px;
+  padding: 36px;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .awards-banner .eyebrow {
@@ -1267,21 +1411,21 @@ section {
 
 .awards-banner h2 {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(26px, 3.2vw, 34px);
-  margin: 6px 0 12px;
+  font-size: clamp(24px, 3vw, 32px);
+  margin: 6px 0 10px;
 }
 
 .awards-banner p {
   color: #C7C9D1;
   max-width: 680px;
-  font-size: 15px;
+  font-size: 14.5px;
 }
 
 .award-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 22px;
 }
 
 @media (max-width: 820px) {
@@ -1323,10 +1467,10 @@ section {
 }
 
 .contact-box {
-  background: linear-gradient(135deg, var(--dd-red-cta) 0%, #B81200 100%);
+  background: linear-gradient(135deg, var(--dd-red-cta) 0%, #9E0E00 100%);
   color: #fff;
   border-radius: 30px;
-  padding: 48px;
+  padding: 44px;
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -1338,20 +1482,21 @@ section {
   .contact-box {
     flex-direction: column;
     text-align: center;
-    padding: 36px 24px;
+    padding: 34px 22px;
   }
 }
 
 .contact-box h2 {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(28px, 3.6vw, 38px);
+  font-size: clamp(26px, 3.4vw, 36px);
   letter-spacing: -1px;
 }
 
 .contact-box p {
   margin-top: 8px;
   color: #FFE4DF;
-  max-width: 540px;
+  max-width: 560px;
+  font-size: 14.5px;
 }
 
 .contact-links {
@@ -1364,9 +1509,9 @@ section {
 .contact-links .c-btn {
   background: #fff;
   color: #191919;
-  padding: 13px 20px;
+  padding: 12px 18px;
   border-radius: 999px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 800;
   border: 0;
   cursor: pointer;
@@ -1375,57 +1520,7 @@ section {
 
 .contact-links .c-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Executive WBR Deck Modal */
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 11, 14, 0.76);
-  backdrop-filter: blur(8px);
-  z-index: 120;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal-backdrop.open {
-  display: flex;
-}
-
-.modal-card {
-  background: var(--bg-card);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  width: min(880px, 100%);
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 32px;
-  box-shadow: var(--shadow-lg);
-}
-
-.modal-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 20px;
-}
-
-.modal-close {
-  background: var(--bg-soft);
-  border: 1px solid var(--line);
-  color: var(--ink);
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
 }
 
 footer {
@@ -1447,7 +1542,7 @@ footer {
   border-radius: 12px;
   font-size: 13px;
   font-weight: 600;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
   opacity: 0;
   transform: translateY(12px);
   pointer-events: none;
@@ -1460,18 +1555,17 @@ footer {
   transform: translateY(0);
 }
 
-/* Clean Print Stylesheet for 1-Page Executive CV PDF Export */
 @media print {
-  nav, .actions, .filter-bar, .lob-tabs, .wbr-section, .contact-section, .toast, .modal-backdrop {
+  #bgCanvas, .ambient-glow, nav, .persona-bar, .actions, .filter-bar, .lob-tabs, .wbr-section, .contact-section, .toast {
     display: none !important;
   }
   body {
     background: #fff !important;
     color: #000 !important;
-    font-size: 11.5px;
+    font-size: 11px;
   }
   .hero, section {
-    padding: 14px 0 !important;
+    padding: 12px 0 !important;
   }
   .job, .stat-card, .skill-card, .credential-card, .command-card, .awards-banner {
     box-shadow: none !important;
@@ -1483,67 +1577,94 @@ footer {
 </head>
 
 <body>
+<!-- Live Interactive Operations Telemetry Background Canvas -->
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+<div class="ambient-glow" aria-hidden="true"></div>
+
 <nav>
   <div class="container nav-inner">
     <a class="brand" href="#">
       <span class="brand-mark">RM</span>
       <div>Rupam <span>Mallick</span></div>
-      <span class="brand-sub">DOORDASH OPS · WAVE 0</span>
+      <span class="brand-sub">DOORDASH WAVE 0 · LSSBB</span>
     </a>
     <div class="nav-links">
-      <a href="#wbr">WBR Command</a>
+      <a href="#analytics">Command &amp; Analysis</a>
       <a href="#experience">Experience</a>
-      <a href="#skills">Competencies</a>
-      <a href="#tools">Tech Stack</a>
+      <a href="#skills">6-Pillar Competencies</a>
+      <a href="#tools">Tech Stack (21)</a>
       <a href="#credentials">Credentials</a>
     </div>
     <div class="nav-actions">
       <button class="icon-btn" id="themeToggle" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">◐</button>
-      <button class="icon-btn" onclick="window.print()" title="Print / Save Executive PDF Resume" aria-label="Print Resume">⎙</button>
-      <button class="nav-cta" id="openModalBtn" type="button">WBR Brief ↗</button>
+      <button class="icon-btn" onclick="window.print()" title="Print / Save 1-Page Executive CV" aria-label="Print Resume">⎙</button>
+      <button class="nav-cta" id="downloadHtmlBtn" type="button">⬇ Download HTML</button>
     </div>
   </div>
 </nav>
+
+<!-- Interactive Executive Role Persona Switcher (Synthesized from all 4 Resumes) -->
+<div class="persona-bar">
+  <div class="container persona-inner">
+    <div class="persona-label">
+      <span class="pulse-dot"></span> SELECT EXECUTIVE PROFILE LENS:
+    </div>
+    <div class="persona-pills" role="tablist">
+      <button class="persona-btn active" data-persona="all">★ Complete Executive Profile</button>
+      <button class="persona-btn" data-persona="doordash">DoorDash Wave 0 &amp; Community Ops</button>
+      <button class="persona-btn" data-persona="transition">US Healthcare Transitions &amp; BPO</button>
+      <button class="persona-btn" data-persona="quality">Quality Lead, AI &amp; LLM Governance</button>
+      <button class="persona-btn" data-persona="vendor">Vendor Operations &amp; BI Analytics</button>
+    </div>
+  </div>
+</div>
 
 <header class="hero">
   <div class="container hero-grid">
     <div>
       <div class="kicker-row">
-        <div class="kicker"><span class="pulse-dot"></span> Operations Leader · DoorDash</div>
-        <div class="lssbb-tag">★ Lean Six Sigma Black Belt (LSSBB)</div>
+        <div class="kicker"><span class="pulse-dot"></span> Operations Leader · DoorDash (Wave 0 GCC)</div>
+        <div class="badge-chip">★ Lean Six Sigma Black Belt</div>
+        <div class="badge-chip">✓ HIPAA &amp; AML/KYC Certified</div>
       </div>
       <h1>Rupam <span>Mallick</span></h1>
-      <div class="subtitle">
-        Contact Center Operations Manager | Analytics &amp; Business Intelligence | Stakeholder Management
+      <div class="subtitle" id="heroSubtitle">
+        Transition &amp; Contact Center Operations Leader | Vendor &amp; Quality Governance | Analytics &amp; Business Intelligence | AI-Enabled Efficiency
       </div>
-      <p class="summary">
-        Contact center operations leader with 5+ years of progressive experience, including leading a multi-tier organization of 80+ operations associates through 4 Team Leaders and 12+ Floor Supports for a Fortune 500 US health insurance client, and standing up DoorDash's Wave 0 India Customer Experience operations in Hyderabad across Consumer, Dasher, and Merchant lines of business.
+      <p class="summary" id="heroSummary">
+        Operations, Transition, and Quality leader with 5+ years of progressive experience in 24/7 global contact center and BPO operations. Led an 80+ member multi-tier organization (4 Team Leaders, 12+ Floor Supports) for a Fortune 500 US health insurer with 95%+ SLA adherence and zero critical compliance breaches, spearheaded end-to-end US-to-India healthcare transitions (UHG B2C), evaluated LLM mapping annotations (Waymo), and now stands up DoorDash's Wave 0 India Line of Business in Hyderabad across Consumer, Dasher, and Merchant support.
       </p>
+      <div class="contact-strip">
+        <span>📍 Hyderabad, Telangana, India</span>
+        <span>✉ rupammlk9@gmail.com</span>
+        <span>✉ rupam.mlk1@gmail.com</span>
+        <span>📞 +91 70099 37515 / +91 81255 00106</span>
+      </div>
       <div class="actions">
-        <button class="btn btn-primary" id="heroModalBtn" type="button">📊 View WBR / DMAIC Command Brief</button>
-        <a class="btn btn-secondary" href="mailto:rupammlk9@gmail.com">✉ Email Me</a>
+        <a class="btn btn-primary" href="#analytics">📊 Explore Live Operational Analysis</a>
         <button class="btn btn-secondary" id="copyEmailBtn" type="button">⧉ Copy Email</button>
         <a class="btn btn-secondary" href="https://www.linkedin.com/in/rupam-mallick-a135b720b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-secondary" href="https://rupammlk9-mnk.github.io/rupam-mlk9" target="_blank" rel="noopener">GitHub Pages ↗</a>
       </div>
     </div>
 
-    <aside class="command-card" aria-label="DoorDash Marketplace Operations Console">
+    <aside class="command-card" aria-label="DoorDash & Global Operations Telemetry Console">
       <div class="cmd-top">
         <div class="cmd-id">
           <div class="initials">RM</div>
           <div class="cmd-title">
-            <h2>Operations &amp; CX Leader</h2>
-            <p>DoorDash · Hyderabad GCC, India</p>
+            <h2>Operations &amp; CX Command</h2>
+            <p>Hyderabad GCC · US &amp; India Stakeholder Matrix</p>
           </div>
         </div>
-        <span class="live-pill">● WAVE 0 LIVE</span>
+        <span class="live-pill">● 24/7 LIVE TELEMETRY</span>
       </div>
 
       <!-- 3-Sided Marketplace Dispatch Route Stage -->
       <div class="dispatch-stage" aria-hidden="true">
         <div class="stage-header">
-          <span><strong>3-SIDED MARKETPLACE TELEMETRY</strong></span>
-          <span>24/7 SLA GOVERNANCE</span>
+          <span><strong>DOORDASH WAVE 0 · 3-SIDED MARKETPLACE</strong></span>
+          <span>SLA · QUALITY · AI</span>
         </div>
         <svg class="dispatch-svg" viewBox="0 0 360 68" xmlns="http://www.w3.org/2000/svg">
           <path class="route-path" d="M 38 42 Q 180 6 322 42" fill="none" stroke="#FF3008" stroke-width="2.5"/>
@@ -1559,18 +1680,19 @@ footer {
         </svg>
       </div>
 
-      <!-- Interactive LOB Tabs -->
+      <!-- Interactive 4-Pillar Operational Switcher -->
       <div class="lob-tabs" role="tablist">
-        <button class="lob-tab active" data-lob="consumer" role="tab">Consumer (Cx)</button>
-        <button class="lob-tab" data-lob="dasher" role="tab">Dasher (Dx)</button>
-        <button class="lob-tab" data-lob="merchant" role="tab">Merchant (Mx)</button>
+        <button class="lob-tab active" data-lob="consumer" role="tab">Consumer Cx</button>
+        <button class="lob-tab" data-lob="dasher" role="tab">Dasher Dx</button>
+        <button class="lob-tab" data-lob="merchant" role="tab">Merchant Mx</button>
+        <button class="lob-tab" data-lob="aiqa" role="tab">AI &amp; LLM QA</button>
       </div>
       <div class="lob-panel" id="lobPanel">
         <div class="lob-panel-head">
           <strong>Consumer (Cx) Support Operations</strong>
           <span class="lob-kpi-tag">SLA · CSAT · FCR</span>
         </div>
-        Owning response speed, quality governance, and AI-enabled continuous improvement across 24/7 live order and post-delivery support queues.
+        Standing up repeatable Wave 0 workflows in Hyderabad, rebalancing real-time resources across 24/7 queues, and driving support deflection and quality governance.
       </div>
 
       <div class="cmd-meta">
@@ -1579,38 +1701,29 @@ footer {
           <b>WBR · MBR · QBR</b>
         </div>
         <div>
-          <span>STACK</span>
-          <b>Salesforce · Astra · THQ</b>
+          <span>TRANSITIONS</span>
+          <b>KT → Parallel → BAU</b>
         </div>
         <div>
-          <span>QUALITY AI</span>
-          <b>Observe.AI · Jira</b>
+          <span>AI &amp; LLM QA</span>
+          <b>Observe.AI · Waymo</b>
         </div>
       </div>
     </aside>
   </div>
 </header>
 
+<!-- 6-Card Quantified Executive Impact Strip -->
 <div class="container stats-section">
   <div class="stat-grid">
-    <div class="stat-card">
-      <div class="stat-top">
-        <strong class="stat-val">5+</strong>
-        <span class="stat-badge">5 ROLES</span>
-      </div>
-      <div class="stat-label">Years Experience</div>
-      <div class="stat-sub">CSR → SME → MIS → Sr. TL → Ops Leader</div>
-      <div class="stat-bar"><div class="stat-bar-fill" style="width:100%"></div></div>
-    </div>
-
     <div class="stat-card">
       <div class="stat-top">
         <strong class="stat-val">80+</strong>
         <span class="stat-badge">4 TLs · 12+ FS</span>
       </div>
-      <div class="stat-label">Associates Led</div>
-      <div class="stat-sub">Multi-tier contact center span</div>
-      <div class="stat-bar"><div class="stat-bar-fill" style="width:92%"></div></div>
+      <div class="stat-label">Multi-Tier Org Led</div>
+      <div class="stat-sub">Operations &amp; Quality Lead span</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:94%"></div></div>
     </div>
 
     <div class="stat-card">
@@ -1619,7 +1732,7 @@ footer {
         <span class="stat-badge">0 BREACHES</span>
       </div>
       <div class="stat-label">SLA Adherence</div>
-      <div class="stat-sub">Sustained with 100% HIPAA compliance</div>
+      <div class="stat-sub">100% HIPAA &amp; audit compliance</div>
       <div class="stat-bar"><div class="stat-bar-fill" style="width:95%"></div></div>
     </div>
 
@@ -1628,130 +1741,187 @@ footer {
         <strong class="stat-val">+25%</strong>
         <span class="stat-badge">-20% BREACHES</span>
       </div>
-      <div class="stat-label">Productivity Gain</div>
-      <div class="stat-sub">Delivered within 2 quarters via DMAIC</div>
+      <div class="stat-label">Productivity Surge</div>
+      <div class="stat-sub">Delivered in 2 quarters via DMAIC</div>
       <div class="stat-bar"><div class="stat-bar-fill" style="width:88%"></div></div>
     </div>
 
     <div class="stat-card">
       <div class="stat-top">
-        <strong class="stat-val">15+</strong>
-        <span class="stat-badge">500+ HRS/YR</span>
+        <strong class="stat-val">-80%</strong>
+        <span class="stat-badge">+30% ACCURACY</span>
       </div>
-      <div class="stat-label">MIS Reports Automated</div>
-      <div class="stat-sub">-80% reporting errors · +30% accuracy</div>
-      <div class="stat-bar"><div class="stat-bar-fill" style="width:94%"></div></div>
+      <div class="stat-label">Reporting Errors Cut</div>
+      <div class="stat-sub">Real-time Power BI, VBA &amp; Omni MIS</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:92%"></div></div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top">
+        <strong class="stat-val">500+</strong>
+        <span class="stat-badge">15+ REPORTS</span>
+      </div>
+      <div class="stat-label">Man-Hours Saved/Yr</div>
+      <div class="stat-sub">Automated Excel VBA, CCOD &amp; Pulse</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:90%"></div></div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-top">
+        <strong class="stat-val">99%</strong>
+        <span class="stat-badge">98% FCR · -95% ESC</span>
+      </div>
+      <div class="stat-label">Frontline CSAT</div>
+      <div class="stat-sub">100+ new hires mentored as SME</div>
+      <div class="stat-bar"><div class="stat-bar-fill" style="width:99%"></div></div>
     </div>
   </div>
 </div>
 
-<!-- Interactive WBR / MBR & Wave 0 Command Section -->
-<section id="wbr" class="wbr-section">
+<!-- Interactive Deep-Dive Analytical Frameworks Section -->
+<section id="analytics" class="wbr-section">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Executive Operating Rhythm</div>
-        <h2 class="section-title">How I run operations &amp; WBRs.</h2>
-        <p class="section-lede">Combining frontline contact center leadership with automated BI telemetry and Lean Six Sigma Black Belt (DMAIC) rigor.</p>
+        <div class="eyebrow">Interactive Operational Blueprints</div>
+        <h2 class="section-title">Deep-dive analysis &amp; governance frameworks.</h2>
+        <p class="section-lede">Explore the four core operating architectures behind my results: US Healthcare Offshore Transitions, AI &amp; Human-in-the-Loop Quality Lead Methodology, Six Sigma DMAIC &amp; BI Automation, and DoorDash Wave 0 GCC Stand-Up.</p>
       </div>
     </div>
 
     <div class="wbr-console">
       <div class="wbr-header">
         <div class="wbr-tabs" role="tablist">
-          <button class="wbr-tab active" data-wbr="telemetry">1. WBR / MBR Telemetry</button>
-          <button class="wbr-tab" data-wbr="pareto">2. Six Sigma (DMAIC) &amp; Pareto RCA</button>
-          <button class="wbr-tab" data-wbr="wave0">3. DoorDash Wave 0 Playbook</button>
+          <button class="wbr-tab active" data-wbr="transition">1. US Healthcare Transition Lifecycle</button>
+          <button class="wbr-tab" data-wbr="quality">2. AI + Human-in-the-Loop QA &amp; LLM</button>
+          <button class="wbr-tab" data-wbr="dmaic">3. Six Sigma DMAIC &amp; BI Telemetry</button>
+          <button class="wbr-tab" data-wbr="wave0">4. DoorDash Wave 0 GCC Playbook</button>
         </div>
-        <span class="date-pill">LIVE GOVERNANCE FRAMEWORK</span>
+        <span class="date-pill">EXECUTIVE ARCHITECTURE</span>
       </div>
 
-      <!-- Pane 1: Telemetry -->
-      <div class="wbr-pane active" id="pane-telemetry">
+      <!-- Pane 1: 5-Stage US Healthcare Transition Lifecycle -->
+      <div class="wbr-pane active" id="pane-transition">
+        <div class="wbr-grid-5">
+          <div class="telemetry-box">
+            <div class="t-head"><span>PHASE 01</span><span>DISCOVERY</span></div>
+            <div class="t-num">As-Is &amp; Scope</div>
+            <div class="t-delta">Requirements &amp; WFM Plan</div>
+            <p>Partnered with WFM (IEX NICE), L&amp;D, QA, and US client teams to scope UHG B2C line requirements, staffing models, and hiring readiness via iCIMS.</p>
+          </div>
+          <div class="telemetry-box">
+            <div class="t-head"><span>PHASE 02</span><span>KNOWLEDGE TRANSFER</span></div>
+            <div class="t-num">KT &amp; SOPs</div>
+            <div class="t-delta">Zero Tribal Dependency</div>
+            <p>Drove structured KT, process discovery, and living SOP documentation in Confluence so operations run consistently without reliance on individual knowledge.</p>
+          </div>
+          <div class="telemetry-box">
+            <div class="t-head"><span>PHASE 03</span><span>CALIBRATION</span></div>
+            <div class="t-num">Shadowing</div>
+            <div class="t-delta">Reverse Shadow &amp; QA</div>
+            <p>Executed shadowing, reverse shadowing, and quality calibration with client &amp; vendor teams while managing transition risk logs and steering committee updates.</p>
+          </div>
+          <div class="telemetry-box">
+            <div class="t-head"><span>PHASE 04</span><span>LAUNCH</span></div>
+            <div class="t-num">Parallel Run</div>
+            <div class="t-delta">Go-Live Exit Criteria</div>
+            <p>Validated go-live readiness gates and HIPAA/PHI data-handling controls as HIPAA SPOC and Operational Risk Champion with zero compliance breaches.</p>
+          </div>
+          <div class="telemetry-box">
+            <div class="t-head"><span>PHASE 05</span><span>STEADY STATE</span></div>
+            <div class="t-num">BAU Handover</div>
+            <div class="t-delta">95%+ SLA Stabilization</div>
+            <p>Tracked post-launch SLA, CSAT, AHT, and productivity against baseline through hypercare stabilization until full steady-state BAU handover.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 2: AI + Human-in-the-Loop QA & LLM Evaluation -->
+      <div class="wbr-pane" id="pane-quality">
         <div class="wbr-grid-4">
           <div class="telemetry-box">
-            <div class="t-head"><span>SLA &amp; QUEUE HEALTH</span><span>24/7 OPS</span></div>
-            <div class="t-num">95%+ SLA</div>
-            <div class="t-delta">▲ -20% SLA Breaches in 2 Qtrs</div>
-            <p>Real-time queue, backlog, and shrinkage governance across multi-tier teams using IEX NICE, Assembled, and automated MIS trackers.</p>
+            <div class="t-head"><span>STEP 01 · AI INGESTION</span><span>NEXIDIA &amp; OBSERVE.AI</span></div>
+            <div class="t-num">100% Signal</div>
+            <div class="t-delta">Automated Risk Surfacing</div>
+            <p>Used interaction analytics to scan interactions for DSAT drivers, compliance risk, and high-AHT friction patterns across Member Services and CX queues.</p>
           </div>
           <div class="telemetry-box">
-            <div class="t-head"><span>QUALITY &amp; SPEECH AI</span><span>OBSERVE.AI / NEXIDIA</span></div>
-            <div class="t-num">CSAT &amp; FCR</div>
-            <div class="t-delta">▲ Early Risk Detection</div>
-            <p>Proactive interaction analytics to isolate dissatisfaction drivers, high-AHT outliers, and compliance risks before they impact customer sentiment.</p>
+            <div class="t-head"><span>STEP 02 · HUMAN REVIEW</span><span>HIGH-SIGNAL VALIDATION</span></div>
+            <div class="t-num">Human-in-Loop</div>
+            <div class="t-delta">Ambiguous Case Triage</div>
+            <p>Applied human judgment to AI-surfaced and ambiguous interactions before coaching so QA and supervisor effort stayed focused on high-signal cases.</p>
           </div>
           <div class="telemetry-box">
-            <div class="t-head"><span>BI &amp; MIS AUTOMATION</span><span>VBA · POWER BI</span></div>
-            <div class="t-num">-80% Errors</div>
-            <div class="t-delta">▲ 500+ Man-Hours Saved/Yr</div>
-            <p>Automated 15+ mission-critical MIS dashboards with structured validation frameworks that improved data accuracy by 30%.</p>
+            <div class="t-head"><span>STEP 03 · LLM EVALUATION</span><span>WAYMO MAPPING QA</span></div>
+            <div class="t-num">LLM QA</div>
+            <div class="t-delta">Annotation &amp; Ground Truth</div>
+            <p>Evaluated LLM outputs through Waymo mapping annotation workflows, applying structured quality rubrics and edge-case validation to complex AI data.</p>
           </div>
           <div class="telemetry-box">
-            <div class="t-head"><span>COMPLIANCE &amp; RISK</span><span>HIPAA SPOC · ORM</span></div>
-            <div class="t-num">100% Audit</div>
-            <div class="t-delta">▲ Zero Critical Breaches</div>
-            <p>End-to-end operational risk governance, SOP standardization, and closed-loop CAPA execution for Fortune 500 and global marketplace operations.</p>
+            <div class="t-head"><span>STEP 04 · REMEDIATION</span><span>L&amp;D + CAPA LOOP</span></div>
+            <div class="t-num">Source Fix</div>
+            <div class="t-delta">CSAT · FCR · AHT Uplift</div>
+            <p>Partnered with Training/L&amp;D and WFM to convert Pareto defect findings into SOP updates, process refreshers, and documented coaching plans.</p>
           </div>
         </div>
       </div>
 
-      <!-- Pane 2: Pareto & Six Sigma -->
-      <div class="wbr-pane" id="pane-pareto">
+      <!-- Pane 3: Pareto & Six Sigma DMAIC -->
+      <div class="wbr-pane" id="pane-dmaic">
         <div class="pareto-list">
           <div class="pareto-row">
             <div class="pareto-top">
-              <span>1. Interaction Analytics &amp; Dissatisfaction Driver Isolation (Observe.AI / Nexidia)</span>
-              <span>CSAT &amp; FCR Uplift</span>
+              <span>1. Performance Management &amp; Workflow Re-Engineering (Lean Six Sigma Black Belt — DMAIC)</span>
+              <span>+25% Productivity | -20% SLA Breaches</span>
             </div>
-            <div class="pareto-track"><div class="pareto-fill" style="width:92%"></div></div>
-            <div class="pareto-sub">Audited high-risk calls and repeat contact drivers, converting root causes into targeted 1-on-1 coaching and SOP refreshers.</div>
+            <div class="pareto-track"><div class="pareto-fill" style="width:94%"></div></div>
+            <div class="pareto-sub">Built repeatable onboarding, escalation, quality-review, and coaching workflows backed by documented feedback and PIPs across 80+ associates within 2 quarters.</div>
           </div>
           <div class="pareto-row">
             <div class="pareto-top">
-              <span>2. Performance Management Re-Engineering (DMAIC Methodology)</span>
-              <span>+25% Productivity</span>
+              <span>2. Real-Time MIS Pipeline Automation (Excel VBA, Power BI, CCOD, Optum Omni &amp; Pulse)</span>
+              <span>-80% Reporting Errors | 500+ Hrs Saved/Yr</span>
             </div>
-            <div class="pareto-track"><div class="pareto-fill" style="width:86%"></div></div>
-            <div class="pareto-sub">Standardized floor support workflows across 4 Team Leaders and 12+ Floor Supports, cutting SLA breaches by 20% within two quarters.</div>
+            <div class="pareto-track"><div class="pareto-fill" style="width:96%"></div></div>
+            <div class="pareto-sub">Automated 15+ mission-critical reports and built data validation frameworks that improved data accuracy by 30% for WBR/MBR/QBR executive reviews.</div>
           </div>
           <div class="pareto-row">
             <div class="pareto-top">
-              <span>3. Reporting Pipeline Automation &amp; Data Validation Frameworks</span>
-              <span>-80% Reporting Errors</span>
+              <span>3. Pareto Root Cause Analysis (RCA) &amp; Closed-Loop CAPA Governance</span>
+              <span>95%+ SLA | 0 Critical Breaches</span>
             </div>
             <div class="pareto-track"><div class="pareto-fill" style="width:95%"></div></div>
-            <div class="pareto-sub">Eliminated manual spreadsheet handoffs across 15+ MIS reports using Excel VBA, Power BI, and CCOD, boosting data accuracy by 30%.</div>
+            <div class="pareto-sub">Isolated top 20% defect drivers causing 80% of repeat customer friction and escalated systemic process issues with clear documentation across vendor and client teams.</div>
           </div>
         </div>
       </div>
 
-      <!-- Pane 3: Wave 0 Playbook -->
+      <!-- Pane 4: DoorDash Wave 0 Playbook -->
       <div class="wbr-pane" id="pane-wave0">
         <div class="wbr-grid-4">
           <div class="telemetry-box">
-            <div class="t-head"><span>STAGE 01</span><span>FOUNDATION</span></div>
-            <div class="t-num">Wave 0 Setup</div>
-            <div class="t-delta">Hyderabad GCC Launch</div>
-            <p>Standing up DoorDash's India Line of Business from the ground up with repeatable operating workflows across Consumer, Dasher, and Merchant support.</p>
+            <div class="t-head"><span>PILLAR 01</span><span>HYDERABAD GCC</span></div>
+            <div class="t-num">Wave 0 Build</div>
+            <div class="t-delta">Consumer · Dasher · Merchant</div>
+            <p>Standing up DoorDash's India Line of Business from the ground up, designing repeatable operating and quality workflows across all three marketplace pillars.</p>
           </div>
           <div class="telemetry-box">
-            <div class="t-head"><span>STAGE 02</span><span>GOVERNANCE</span></div>
-            <div class="t-num">24/7 KPIs</div>
-            <div class="t-delta">Response &amp; Quality SLAs</div>
-            <p>Owning end-to-end SLA delivery, queue health, and real-time escalation protocols across all three marketplace pillars.</p>
+            <div class="t-head"><span>PILLAR 02</span><span>REAL-TIME WFM</span></div>
+            <div class="t-num">24/7 SLA</div>
+            <div class="t-delta">Dynamic Resource Balancing</div>
+            <p>Setting individual and team goals, coordinating daily workflows, and rebalancing resources in real time across 24/7 queues to protect response and quality KPIs.</p>
           </div>
           <div class="telemetry-box">
-            <div class="t-head"><span>STAGE 03</span><span>EXECUTIVE ALIGNMENT</span></div>
+            <div class="t-head"><span>PILLAR 03</span><span>EXECUTIVE CADENCE</span></div>
             <div class="t-num">WBR / MBR / QBR</div>
-            <div class="t-delta">Cross-Functional Storytelling</div>
-            <p>Presenting weekly, monthly, and quarterly performance trends, variance root causes, and strategic roadmaps to senior leadership.</p>
+            <div class="t-delta">Cross-Functional Influence</div>
+            <p>Presenting performance trends, support deflection analysis, and actionable insights to senior management and cross-functional stakeholders.</p>
           </div>
           <div class="telemetry-box">
-            <div class="t-head"><span>STAGE 04</span><span>CONTINUOUS IMPROVEMENT</span></div>
-            <div class="t-num">AI &amp; Automation</div>
-            <div class="t-delta">Manual Effort Reduction</div>
-            <p>Analyzing service telemetry in Salesforce, Astra, THQ, and Observe.AI to champion automation and streamline agent workflows.</p>
+            <div class="t-head"><span>PILLAR 04</span><span>AI CONTINUOUS IMP.</span></div>
+            <div class="t-num">Astra &amp; THQ</div>
+            <div class="t-delta">Salesforce · Observe.AI · Jira</div>
+            <p>Analyzing service telemetry to identify process issues and championing AI-enabled automation to eliminate manual agent effort.</p>
           </div>
         </div>
       </div>
@@ -1759,27 +1929,29 @@ footer {
   </div>
 </section>
 
+<!-- Comprehensive Experience Timeline -->
 <section id="experience" class="experience">
   <div class="container">
     <div class="section-head">
       <div>
         <div class="eyebrow">Professional Experience</div>
-        <h2 class="section-title">Building better operations.</h2>
-        <p class="section-lede">A progression from frontline customer service to multi-layer operations leadership, analytics, and business process improvement.</p>
+        <h2 class="section-title">5+ years of progressive operational leadership.</h2>
+        <p class="section-lede">Every achievement below is synthesized from my work across DoorDash and Wipro—filter by domain to inspect specific capabilities.</p>
       </div>
       <div class="filter-bar" aria-label="Highlight experience focus">
         <button class="filter-btn active" data-exp-filter="all">All Impact</button>
-        <button class="filter-btn" data-exp-filter="ops">Operations &amp; SLA</button>
-        <button class="filter-btn" data-exp-filter="bi">Analytics &amp; BI</button>
-        <button class="filter-btn" data-exp-filter="lss">Six Sigma &amp; Risk</button>
+        <button class="filter-btn" data-exp-filter="ops">Operations &amp; Vendor SLA</button>
+        <button class="filter-btn" data-exp-filter="trans">US Healthcare Transitions</button>
+        <button class="filter-btn" data-exp-filter="qa">Quality Lead &amp; AI/LLM</button>
+        <button class="filter-btn" data-exp-filter="bi">BI &amp; MIS Automation</button>
       </div>
     </div>
 
     <!-- Career Velocity Track -->
     <div class="velocity-banner">
       <div class="velocity-title">
-        <span>Career Velocity Trajectory (2021 – Present)</span>
-        <span>Frontline CSR → Operations Leader</span>
+        <span>Career Velocity Trajectory (May 2021 – Present)</span>
+        <span>Fast-Tracked CSR → SME (within 12 Mos) → MIS Analyst → Senior Team Leader → Operations Leader</span>
       </div>
       <div class="velocity-steps">
         <div class="v-step">
@@ -1795,17 +1967,17 @@ footer {
         <div class="v-step">
           <time>Sept 2022 – Sept 2023</time>
           <strong>MIS Analyst / CCOD</strong>
-          <span>Wipro · 15+ Reports Automated</span>
+          <span>Wipro · 15+ Reports · 500+ Hrs</span>
         </div>
         <div class="v-step">
           <time>Oct 2023 – Sept 2026</time>
           <strong>Senior Team Leader</strong>
-          <span>Wipro · 80+ Associates Led</span>
+          <span>Wipro · 80+ Org · Transitions &amp; QA</span>
         </div>
         <div class="v-step active-role">
           <time>Sept 2026 – Present</time>
           <strong>Operations Leader</strong>
-          <span>DoorDash · Wave 0 Hyderabad</span>
+          <span>DoorDash · Wave 0 Hyderabad GCC</span>
         </div>
       </div>
     </div>
@@ -1817,24 +1989,26 @@ footer {
           <div>
             <h3>Operations Leader</h3>
             <div class="company">
-              DoorDash · Hyderabad, India
+              DoorDash · Hyderabad, Telangana, India
               <span class="live-badge">● LIVE · WAVE 0 GCC</span>
             </div>
           </div>
           <div class="date-pill">Sept 2026 – Present</div>
         </div>
-        <div class="job-sub">Customer Experience — Consumer, Dasher &amp; Merchant</div>
+        <div class="job-sub">Customer Experience — Consumer (Cx), Dasher (Dx) &amp; Merchant (Mx) | 24/7 Global Operations</div>
         <div class="job-metrics-strip">
           <span class="jm-chip"><b>Wave 0</b> India LOB Stand-Up</span>
           <span class="jm-chip"><b>3 LOBs</b> Consumer · Dasher · Merchant</span>
           <span class="jm-chip"><b>WBR / MBR / QBR</b> Executive Governance</span>
+          <span class="jm-chip"><b>AI &amp; Automation</b> Deflection &amp; Efficiency</span>
         </div>
         <ul>
-          <li data-tags="ops lss">Part of Wave 0 standing up DoorDash's India Line of Business from the ground up in the new Hyderabad global capability centre, building repeatable operating workflows for Consumer, Dasher and Merchant support.</li>
-          <li data-tags="ops">Own response and quality KPIs and SLA delivery across three lines of business in a 24/7 contact center environment.</li>
-          <li data-tags="bi ops">Present performance trends and insights in Weekly, Monthly and Quarterly Business Reviews (WBR / MBR / QBR) to management and cross-functional stakeholders.</li>
-          <li data-tags="bi lss">Analyze service metrics to identify patterns and performance gaps, and champion automation and AI-enabled continuous improvement to reduce manual effort.</li>
-          <li data-tags="bi ops"><b>Tools:</b> Salesforce, Observe.AI, Astra, THQ, Jira, Google Workspace.</li>
+          <li data-tags="ops trans">Part of Wave 0 standing up DoorDash's India Line of Business from the ground up in the new Hyderabad Global Capability Centre (GCC), building repeatable operating and quality workflows for Consumer, Dasher, and Merchant support.</li>
+          <li data-tags="ops">Run day-to-day operations across Consumer, Dasher, and Merchant lines of business, owning response and quality KPIs, SLA delivery, and real-time resource rebalancing in a 24/7 contact center environment.</li>
+          <li data-tags="ops qa">Set individual and team goals, coordinate daily workflows, and lift team performance through structured weekly 1-on-1s, coaching, and quality calibration.</li>
+          <li data-tags="bi ops">Own Weekly, Monthly, and Quarterly Business Reviews (WBR / MBR / QBR), presenting performance trends, root-cause insights, and support deflection analysis to senior management and cross-functional stakeholders.</li>
+          <li data-tags="bi qa">Analyze service metrics to identify process issues, patterns, and performance gaps, championing automation and AI-enabled continuous improvement to reduce manual effort.</li>
+          <li data-tags="ops bi"><b>Tools:</b> Salesforce, Observe.AI, Astra, THQ, Jira, Google Workspace.</li>
         </ul>
       </article>
 
@@ -1842,29 +2016,44 @@ footer {
       <article class="job">
         <div class="job-top">
           <div>
-            <h3>Senior Team Leader (First Line Manager)</h3>
+            <h3>Senior Team Leader — Transition, Operations &amp; Quality Lead (First Line Manager)</h3>
             <div class="company">Wipro Ltd. · Kolkata, India</div>
           </div>
           <div class="date-pill">Oct 2023 – Sept 2026</div>
         </div>
-        <div class="job-sub">Insurance Services · Fortune 500 US Health Insurance Client</div>
+        <div class="job-sub">Insurance Services · Fortune 500 US Health Insurance Client (Member Services &amp; UHG B2C Line)</div>
         <div class="job-metrics-strip">
           <span class="jm-chip"><b>80+</b> Associates (4 TLs · 12+ FS)</span>
           <span class="jm-chip"><b>95%+</b> SLA Adherence</span>
           <span class="jm-chip"><b>+25%</b> Productivity</span>
+          <span class="jm-chip"><b>-20%</b> SLA Breaches</span>
           <span class="jm-chip"><b>-80%</b> Reporting Errors</span>
+          <span class="jm-chip"><b>2x</b> Best Team Leader (2024–26)</span>
         </div>
+
+        <div class="job-pillar-title">1. US Healthcare Business Transitions (US to India Offshore Delivery)</div>
         <ul>
-          <li data-tags="ops">Led a contact center operation of 80+ members through 4 Team Leaders and 12+ Floor Supports, sustaining 95%+ SLA adherence with zero critical compliance breaches.</li>
-          <li data-tags="bi ops">Presented SLA, CSAT, AHT and productivity performance to senior client and vendor leaders using real-time MIS dashboards and trend reports, eliminating 80% of reporting errors.</li>
-          <li data-tags="bi ops">Used Nexidia and Observe.AI analytics to identify high-risk interactions and dissatisfaction drivers early, improving CSAT, FCR and AHT.</li>
-          <li data-tags="ops">Implemented performance management models that increased productivity by 25% and cut SLA breaches by 20% within two quarters.</li>
-          <li data-tags="lss">Ran root cause analysis and CAPA on repeat defects using Pareto and defect analysis, converting findings into SOP updates.</li>
-          <li data-tags="lss">Led Business Process Improvement using Lean Six Sigma (DMAIC) to re-engineer workflows and standardize processes.</li>
-          <li data-tags="ops lss">Drove large-scale project implementations from requirements through launch and measurement, including transition of new business into the UHG B2C line.</li>
-          <li data-tags="ops">Served as primary point of contact and escalation point for client and vendor leadership.</li>
-          <li data-tags="lss">Served as HIPAA SPOC and Operational Risk Champion, ensuring audit, privacy and data-handling compliance.</li>
-          <li data-tags="ops">Controlled shrinkage and attrition through engagement, recognition and early-warning interventions; led hiring and onboarding via ICIMS.</li>
+          <li data-tags="trans ops">Led US healthcare business transitions into the India delivery centre, including transitioning new business into the UHG B2C line, owning the end-to-end journey from requirements gathering through Knowledge Transfer (KT), training, parallel run, go-live, and measurement.</li>
+          <li data-tags="trans ops">Partnered cross-functionally with Workforce Management (IEX NICE), Learning &amp; Development (L&amp;D), Quality Assurance, client, and vendor teams to plan staffing, training readiness, quality calibration, and go-live exit criteria.</li>
+          <li data-tags="trans qa">Drove structured knowledge transfer, shadowing/reverse shadowing, and As-Is process documentation, converting findings into living SOP updates so operations run consistently without dependence on individual tribal knowledge.</li>
+          <li data-tags="trans ops">Managed transition risks, issues, and dependencies across governance cycles, providing steering committee updates and tracking post-go-live stabilization against baseline until steady-state BAU handover.</li>
+        </ul>
+
+        <div class="job-pillar-title">2. Contact Center Operations &amp; BPO Partner Performance</div>
+        <ul>
+          <li data-tags="ops">Led BPO site performance for an 80+ member multi-tier customer support and quality operation through 4 Team Leaders and 12+ Floor Supports, sustaining 95%+ SLA adherence with zero critical compliance breaches.</li>
+          <li data-tags="ops bi">Implemented structured performance management models (repeatable onboarding, escalation, quality-review, coaching workflows, documented feedback, and PIPs) that increased productivity by 25% and cut SLA breaches by 20% within two quarters.</li>
+          <li data-tags="ops">Served as primary point of contact and escalation owner for senior US client and vendor leadership; owned end-to-end resolution of critical issues and escalated systemic process gaps with clear data-backed documentation.</li>
+          <li data-tags="ops">Controlled shrinkage and attrition through proactive engagement, rewards &amp; recognition, and early-warning interventions; led hiring and onboarding via iCIMS.</li>
+        </ul>
+
+        <div class="job-pillar-title">3. Quality Lead (QA) Governance, AI Analytics &amp; Six Sigma Process Excellence</div>
+        <ul>
+          <li data-tags="qa bi">Used Nexidia and Observe.AI interaction analytics to surface high-risk and ambiguous interactions and dissatisfaction (DSAT) drivers early, applying human review before coaching so human effort stayed focused on high-signal cases—directly improving CSAT, FCR, and AHT.</li>
+          <li data-tags="qa ops">Ran root cause analysis (RCA) and CAPA on repeat defects using Pareto and defect analysis, partnering with L&amp;D to convert findings into SOP updates and process refreshers so recurring quality gaps were fixed at the source.</li>
+          <li data-tags="qa ops">Led Business Process Improvement using Lean Six Sigma (DMAIC) to remove root-cause inefficiencies, re-engineer workflows, and build a problem-solving culture.</li>
+          <li data-tags="bi ops">Designed real-time MIS dashboards and trend reports (Advanced Excel VBA, Power BI, Optum Omni Channel Reporting) on SLA, CSAT, AHT, and productivity for WBR/MBR/QBR executive reviews, eliminating 80% of reporting errors.</li>
+          <li data-tags="trans qa">Served as HIPAA SPOC and Operational Risk Champion, ensuring 100% audit readiness, PHI privacy, and data-handling compliance during and after transition.</li>
         </ul>
       </article>
 
@@ -1884,9 +2073,9 @@ footer {
           <span class="jm-chip"><b>+30%</b> Data Accuracy</span>
         </div>
         <ul>
-          <li data-tags="bi">Automated 15+ mission-critical MIS reports using Advanced Excel VBA, CCOD, Power BI and Pulse Channel Reporting, saving 500+ man-hours annually.</li>
-          <li data-tags="bi ops">Built real-time dashboards tracking SLA, AHT, productivity, shrinkage and queue/backlog metrics; improved data accuracy by 30% through data validation frameworks.</li>
-          <li data-tags="bi lss">Performed root cause analysis on KPI deviations and standardized reporting templates and SOPs to create a shared source of truth.</li>
+          <li data-tags="bi">Automated 15+ mission-critical MIS reports using Advanced Excel VBA, CCOD, Power BI, and Pulse Channel Reporting, saving 500+ man-hours annually.</li>
+          <li data-tags="bi ops">Built real-time dashboards tracking SLA, AHT, productivity, shrinkage, and queue/backlog metrics; improved data accuracy by 30% through automated data validation frameworks.</li>
+          <li data-tags="bi qa">Performed root cause analysis on KPI deviations and standardized reporting templates and SOPs to establish a single shared source of truth across client and vendor leadership.</li>
         </ul>
       </article>
 
@@ -1903,11 +2092,12 @@ footer {
         <div class="job-metrics-strip">
           <span class="jm-chip"><b>50+</b> Agents Supported</span>
           <span class="jm-chip"><b>100+</b> New Hires Mentored</span>
+          <span class="jm-chip"><b>Award</b> Best SME 2022–23</span>
         </div>
         <ul>
-          <li data-tags="ops">First-line escalation handler for 50+ agents, protecting SLA, quality and productivity and reducing escalation volumes.</li>
-          <li data-tags="bi lss">Ran Nexidia call audits, process refreshers and one-on-one coaching that improved CSAT and compliance.</li>
-          <li data-tags="ops">Mentored and groomed 100+ new hires through structured coaching plans and onboarding.</li>
+          <li data-tags="ops">Served as first-line escalation handler for 50+ agents, protecting SLA, quality, and floor productivity while reducing supervisor escalation volumes.</li>
+          <li data-tags="qa bi">Conducted Nexidia call audits, targeted process refreshers, and 1-on-1 coaching sessions that elevated CSAT and compliance scores.</li>
+          <li data-tags="ops trans">Mentored and groomed 100+ new hires through structured onboarding and nesting coaching plans.</li>
         </ul>
       </article>
 
@@ -1928,102 +2118,134 @@ footer {
           <span class="jm-chip"><b>-95%</b> Escalations</span>
         </div>
         <ul>
-          <li data-tags="ops">Handled 50+ customer interactions daily with 99% CSAT, 98% First Call Resolution and 100% HIPAA compliance.</li>
-          <li data-tags="ops lss">Reduced escalations by 95%; fast-tracked to SME within 12 months.</li>
+          <li data-tags="ops">Handled 50+ customer interactions daily with 99% CSAT, 98% First Call Resolution (FCR), and 100% HIPAA compliance.</li>
+          <li data-tags="ops qa">Reduced escalations by 95% and earned a fast-track promotion to Subject Matter Expert within 12 months; named Best Production Agent 2022.</li>
         </ul>
       </article>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<!-- 6-Pillar Core Competencies Matrix -->
+<section id="skills" class="skills-section">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Core Competencies</div>
-        <h2 class="section-title">Where operations meets data.</h2>
+        <div class="eyebrow">Comprehensive Capabilities</div>
+        <h2 class="section-title">6-Pillar Operations &amp; Intelligence Matrix.</h2>
       </div>
     </div>
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-card-head">
-          <h3>Contact Center Operations</h3>
+          <h3>US Healthcare Transitions</h3>
+          <span class="skill-icon">TRANS</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Offshore Transition (US to India)</span>
+          <span class="skill-tag">As-Is Process Discovery</span>
+          <span class="skill-tag">Knowledge Transfer (KT)</span>
+          <span class="skill-tag">Shadowing &amp; Reverse Shadowing</span>
+          <span class="skill-tag">Parallel Run &amp; Go-Live Gates</span>
+          <span class="skill-tag">Stabilization &amp; BAU Handover</span>
+          <span class="skill-tag">Steering Committee Reporting</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-head">
+          <h3>Contact Center &amp; Vendor Ops</h3>
           <span class="skill-icon">OPS</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Contact Center Management</span>
-          <span class="skill-tag">SLA Governance</span>
-          <span class="skill-tag">AHT &amp; CSAT</span>
-          <span class="skill-tag">First Call Resolution (FCR)</span>
-          <span class="skill-tag">Workforce Management (IEX NICE)</span>
-          <span class="skill-tag">Quality Assurance</span>
+          <span class="skill-tag">24/7 Operations Management</span>
+          <span class="skill-tag">BPO Partner Performance</span>
+          <span class="skill-tag">SLA Governance (95%+)</span>
+          <span class="skill-tag">CSAT, FCR &amp; AHT Optimization</span>
+          <span class="skill-tag">Support Deflection Analysis</span>
+          <span class="skill-tag">WFM (IEX NICE / Assembled)</span>
           <span class="skill-tag">Shrinkage &amp; Attrition Control</span>
-          <span class="skill-tag">24/7 Operations</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-head">
+          <h3>Quality (QA) &amp; AI Governance</h3>
+          <span class="skill-icon">QA·AI</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">QA Framework Design</span>
+          <span class="skill-tag">Human-in-the-Loop AI Review</span>
+          <span class="skill-tag">Risk-Based High-Signal Sampling</span>
+          <span class="skill-tag">LLM Annotation Eval (Waymo)</span>
+          <span class="skill-tag">Interaction Analytics (Observe.AI / Nexidia)</span>
+          <span class="skill-tag">L&amp;D Quality Remediation</span>
         </div>
       </div>
 
       <div class="skill-card">
         <div class="skill-card-head">
           <h3>Analytics &amp; Business Intelligence</h3>
-          <span class="skill-icon">BI</span>
+          <span class="skill-icon">BI·MIS</span>
         </div>
         <div class="skill-tags">
-          <span class="skill-tag">Data &amp; Trend Analysis</span>
-          <span class="skill-tag">KPI Definition</span>
-          <span class="skill-tag">MIS Dashboards</span>
-          <span class="skill-tag">Data Visualization</span>
+          <span class="skill-tag">Automated MIS (Excel VBA)</span>
+          <span class="skill-tag">Real-Time Dashboards (Power BI / Tableau)</span>
           <span class="skill-tag">Data Validation Frameworks</span>
-          <span class="skill-tag">Interaction Analytics</span>
-          <span class="skill-tag">Root Cause Analysis</span>
+          <span class="skill-tag">Optum Omni &amp; Pulse Reporting</span>
+          <span class="skill-tag">KPI Definition &amp; Trend Analysis</span>
+          <span class="skill-tag">Snowflake Data Querying</span>
         </div>
       </div>
 
       <div class="skill-card">
         <div class="skill-card-head">
-          <h3>Leadership &amp; Stakeholders</h3>
-          <span class="skill-icon">LDR</span>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-tag">Leading Ops &amp; Analytical Teams</span>
-          <span class="skill-tag">Senior Stakeholder Management</span>
-          <span class="skill-tag">Cross-Functional Collaboration</span>
-          <span class="skill-tag">Thought Leadership</span>
-          <span class="skill-tag">Executive Reviews (WBR / MBR / QBR)</span>
-          <span class="skill-tag">Data Storytelling</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <div class="skill-card-head">
-          <h3>Process Excellence</h3>
-          <span class="skill-icon">LSS</span>
+          <h3>Six Sigma &amp; Risk Compliance</h3>
+          <span class="skill-icon">LSSBB</span>
         </div>
         <div class="skill-tags">
           <span class="skill-tag">Lean Six Sigma Black Belt (DMAIC)</span>
-          <span class="skill-tag">Operational Excellence</span>
-          <span class="skill-tag">Process Improvement</span>
-          <span class="skill-tag">CAPA &amp; Pareto Analysis</span>
+          <span class="skill-tag">Root Cause Analysis (RCA)</span>
+          <span class="skill-tag">CAPA &amp; Pareto Defect Analysis</span>
+          <span class="skill-tag">HIPAA &amp; PHI Governance</span>
+          <span class="skill-tag">Operational Risk Management</span>
+          <span class="skill-tag">AML &amp; KYC Compliance</span>
+          <span class="skill-tag">SOP Standardization</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-head">
+          <h3>Executive Stakeholder Leadership</h3>
+          <span class="skill-icon">EXEC</span>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Multi-Tier Leadership (80+ Span)</span>
+          <span class="skill-tag">Lead Through Influence</span>
+          <span class="skill-tag">WBR / MBR / QBR Presentations</span>
+          <span class="skill-tag">US &amp; India Matrix Governance</span>
+          <span class="skill-tag">Data Storytelling</span>
           <span class="skill-tag">Change Management</span>
-          <span class="skill-tag">New Business Transition</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Categorized 21-Tool Ecosystem -->
 <section id="tools" class="tools-section">
   <div class="container">
     <div class="section-head">
       <div>
         <div class="eyebrow">Technology Ecosystem</div>
-        <h2 class="section-title">Tools I work with.</h2>
+        <h2 class="section-title">21 platforms, BI &amp; AI tools I work with.</h2>
       </div>
       <div class="filter-bar" aria-label="Filter technology stack">
-        <button class="filter-btn active" data-tool-filter="all">All (17)</button>
-        <button class="filter-btn" data-tool-filter="cx">DoorDash &amp; Contact Center</button>
-        <button class="filter-btn" data-tool-filter="bi">BI &amp; Automation</button>
-        <button class="filter-btn" data-tool-filter="ai">Speech AI &amp; QA</button>
-        <button class="filter-btn" data-tool-filter="ops">CRM &amp; Governance</button>
+        <button class="filter-btn active" data-tool-filter="all">All (21)</button>
+        <button class="filter-btn" data-tool-filter="cx">DoorDash &amp; CCaaS/WFM</button>
+        <button class="filter-btn" data-tool-filter="bi">BI, Data &amp; Automation</button>
+        <button class="filter-btn" data-tool-filter="ai">Speech AI &amp; LLM QA</button>
+        <button class="filter-btn" data-tool-filter="ops">CRM, HR &amp; Collaboration</button>
       </div>
     </div>
 
@@ -2031,62 +2253,69 @@ footer {
       <div class="tool-pill" data-cat="cx"><span class="tool-name">Astra</span><span class="tool-cat">DoorDash CX Ops</span></div>
       <div class="tool-pill" data-cat="cx"><span class="tool-name">THQ</span><span class="tool-cat">DoorDash Tooling</span></div>
       <div class="tool-pill" data-cat="ops"><span class="tool-name">Salesforce</span><span class="tool-cat">CRM Platform</span></div>
-      <div class="tool-pill" data-cat="ai"><span class="tool-name">Observe.AI</span><span class="tool-cat">Conversation AI</span></div>
+      <div class="tool-pill" data-cat="ai"><span class="tool-name">Observe.AI</span><span class="tool-cat">Conversation AI &amp; QA</span></div>
       <div class="tool-pill" data-cat="ai"><span class="tool-name">Nexidia</span><span class="tool-cat">Interaction Analytics</span></div>
-      <div class="tool-pill" data-cat="bi"><span class="tool-name">Power BI</span><span class="tool-cat">BI Dashboards</span></div>
+      <div class="tool-pill" data-cat="ai"><span class="tool-name">Waymo LLM Eval</span><span class="tool-cat">Mapping Annotation QA</span></div>
+      <div class="tool-pill" data-cat="bi"><span class="tool-name">Power BI</span><span class="tool-cat">Executive BI Dashboards</span></div>
       <div class="tool-pill" data-cat="bi"><span class="tool-name">Tableau</span><span class="tool-cat">Data Visualization</span></div>
       <div class="tool-pill" data-cat="bi"><span class="tool-name">Snowflake</span><span class="tool-cat">Cloud Data Platform</span></div>
-      <div class="tool-pill" data-cat="bi"><span class="tool-name">Advanced Excel (VBA)</span><span class="tool-cat">MIS Automation</span></div>
-      <div class="tool-pill" data-cat="bi"><span class="tool-name">PowerApps</span><span class="tool-cat">Workflow Apps</span></div>
-      <div class="tool-pill" data-cat="cx"><span class="tool-name">IEX NICE</span><span class="tool-cat">Workforce Mgmt</span></div>
-      <div class="tool-pill" data-cat="cx"><span class="tool-name">Assembled</span><span class="tool-cat">Workforce Mgmt</span></div>
-      <div class="tool-pill" data-cat="cx"><span class="tool-name">Genesis Cloud</span><span class="tool-cat">CCaaS Platform</span></div>
-      <div class="tool-pill" data-cat="ops"><span class="tool-name">Jira</span><span class="tool-cat">Project &amp; Issue Ops</span></div>
-      <div class="tool-pill" data-cat="ops"><span class="tool-name">Confluence</span><span class="tool-cat">SOP &amp; Knowledge</span></div>
-      <div class="tool-pill" data-cat="ops"><span class="tool-name">Google Workspace</span><span class="tool-cat">Cloud Collaboration</span></div>
+      <div class="tool-pill" data-cat="bi"><span class="tool-name">Advanced Excel (VBA)</span><span class="tool-cat">15+ MIS Automations</span></div>
+      <div class="tool-pill" data-cat="bi"><span class="tool-name">Optum Omni &amp; Pulse</span><span class="tool-cat">CCOD Channel Reporting</span></div>
+      <div class="tool-pill" data-cat="bi"><span class="tool-name">PowerApps</span><span class="tool-cat">Low-Code Workflow Apps</span></div>
+      <div class="tool-pill" data-cat="cx"><span class="tool-name">IEX NICE</span><span class="tool-cat">Workforce Management</span></div>
+      <div class="tool-pill" data-cat="cx"><span class="tool-name">Assembled</span><span class="tool-cat">Modern WFM</span></div>
+      <div class="tool-pill" data-cat="cx"><span class="tool-name">Genesys Cloud</span><span class="tool-cat">CCaaS Platform</span></div>
+      <div class="tool-pill" data-cat="ops"><span class="tool-name">iCIMS</span><span class="tool-cat">Hiring &amp; Onboarding</span></div>
+      <div class="tool-pill" data-cat="ops"><span class="tool-name">Jira</span><span class="tool-cat">Issue &amp; Project Ops</span></div>
+      <div class="tool-pill" data-cat="ops"><span class="tool-name">Confluence</span><span class="tool-cat">SOPs &amp; Knowledge Base</span></div>
+      <div class="tool-pill" data-cat="ops"><span class="tool-name">Google Workspace</span><span class="tool-cat">Cloud Productivity</span></div>
+      <div class="tool-pill" data-cat="ops"><span class="tool-name">Slack &amp; Zoom</span><span class="tool-cat">Global Collaboration</span></div>
       <div class="tool-pill" data-cat="ops"><span class="tool-name">PowerPoint</span><span class="tool-cat">WBR / MBR / QBR Decks</span></div>
     </div>
   </div>
 </section>
 
-<section id="credentials">
+<!-- Credentials, Certifications & Multi-Year Awards -->
+<section id="credentials" class="credentials-section">
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Credentials</div>
-        <h2 class="section-title">Certifications &amp; recognition.</h2>
+        <div class="eyebrow">Credentials &amp; Governance</div>
+        <h2 class="section-title">8 Certifications, education &amp; multi-year awards.</h2>
       </div>
     </div>
 
     <div class="credentials-grid">
       <div class="credential-card">
-        <h3>Certifications</h3>
+        <h3>Certifications &amp; Executive Licenses</h3>
         <ul class="clean-list">
-          <li><span class="check-icon">✓</span><span><b>Lean Six Sigma Black Belt (LSSBB)</b></span></li>
-          <li><span class="check-icon">✓</span><span><b>Wipro People Manager Proficiency</b> — Wipro x Harvard Business Publishing</span></li>
-          <li><span class="check-icon">✓</span><span><b>HIPAA Certified</b></span></li>
-          <li><span class="check-icon">✓</span><span><b>Operational Risk Management Certified</b></span></li>
-          <li><span class="check-icon">✓</span><span><b>Train the Trainer (TTT) L2</b> — Master Trainer</span></li>
-          <li><span class="check-icon">✓</span><span><b>Business Process Management (BPM)</b> and Process Improvement</span></li>
-          <li><span class="check-icon">✓</span><span><b>ICIMS Hiring and Onboarding</b></span></li>
+          <li><span class="check-icon">✓</span><span><b>Lean Six Sigma Black Belt (LSSBB)</b> — DMAIC Process Re-Engineering &amp; Statistical Root Cause Analysis</span></li>
+          <li><span class="check-icon">✓</span><span><b>Wipro People Manager Proficiency</b> — Wipro × Harvard Business Publishing</span></li>
+          <li><span class="check-icon">✓</span><span><b>HIPAA Certified</b> — US Healthcare PHI Data Privacy &amp; Security SPOC</span></li>
+          <li><span class="check-icon">✓</span><span><b>Operational Risk Management (ORM) Certified</b> — Audit Readiness &amp; Control Governance</span></li>
+          <li><span class="check-icon">✓</span><span><b>AML &amp; KYC Compliance Certified</b> — Anti-Money Laundering &amp; Identity Verification Controls</span></li>
+          <li><span class="check-icon">✓</span><span><b>Train the Trainer (TTT) L2 — Master Trainer</b> — Coaching &amp; L&amp;D Curriculum Delivery</span></li>
+          <li><span class="check-icon">✓</span><span><b>Business Process Management (BPM) &amp; Process Improvement</b></span></li>
+          <li><span class="check-icon">✓</span><span><b>iCIMS Hiring &amp; Onboarding Certified</b> — Talent Acquisition &amp; Ramp Readiness</span></li>
         </ul>
       </div>
 
       <div class="credential-card">
-        <h3>Education &amp; Languages</h3>
+        <h3>Education, Languages &amp; Operating Flexibility</h3>
         <ul class="clean-list">
-          <li><span class="check-icon">✓</span><span><b>Bachelor of Arts</b> — Scottish Church College, University of Calcutta (2018–2021)</span></li>
-          <li><span class="check-icon">✓</span><span><b>English</b> — Fluent</span></li>
+          <li><span class="check-icon">✓</span><span><b>Bachelor of Arts (B.A.)</b><br>Scottish Church College, University of Calcutta (2018 – 2021)</span></li>
+          <li><span class="check-icon">✓</span><span><b>English</b> — Fluent (US &amp; Global Executive Stakeholder Communication)</span></li>
           <li><span class="check-icon">✓</span><span><b>Hindi</b> — Fluent</span></li>
           <li><span class="check-icon">✓</span><span><b>Bengali</b> — Native</span></li>
+          <li><span class="check-icon">✓</span><span><b>Global Operating Readiness</b> — Experienced across US &amp; India matrixed environments; flexible across 24/7 shifts, weekends, and global launch windows.</span></li>
         </ul>
       </div>
     </div>
 
     <div class="awards-banner">
       <div class="eyebrow">Awards &amp; Recognition</div>
-      <h2>Performance that gets recognized.</h2>
-      <p>Recognition received during my Wipro journey for leadership, subject matter expertise, and frontline production performance.</p>
+      <h2>Consistent multi-year performance recognition.</h2>
+      <p>Recognized at every level of progression at Wipro Limited—from frontline production excellence to subject matter expertise and back-to-back Best Team Leader honors.</p>
       <div class="award-cards">
         <div class="award-item">
           <div class="award-year">2025 – 2026</div>
@@ -2114,72 +2343,97 @@ footer {
     <div class="contact-box">
       <div>
         <div class="eyebrow" style="color:#FFD5CC">Let's Connect</div>
-        <h2>Build better customer operations.</h2>
-        <p>Open to conversations around operations leadership, customer experience, analytics and process excellence.</p>
+        <h2>Ready to scale high-velocity operations.</h2>
+        <p>Open to leadership conversations across Contact Center Operations, Global Transitions, Vendor &amp; Quality Governance, and BI Analytics.</p>
       </div>
       <div class="contact-links">
-        <a class="c-btn" href="mailto:rupammlk9@gmail.com">Email: rupammlk9@gmail.com</a>
+        <a class="c-btn" href="mailto:rupammlk9@gmail.com">rupammlk9@gmail.com</a>
+        <a class="c-btn" href="mailto:rupam.mlk1@gmail.com">rupam.mlk1@gmail.com</a>
         <a class="c-btn" href="https://www.linkedin.com/in/rupam-mallick-a135b720b/" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Interactive Executive WBR / DMAIC Brief Modal -->
-<div class="modal-backdrop" id="wbrModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-card">
-    <div class="modal-top">
-      <div>
-        <div class="eyebrow">Executive Leadership Brief · WBR / MBR Snapshot</div>
-        <h2 id="modalTitle" style="font-family:'Manrope';font-size:26px;margin-top:4px;">Rupam Mallick — Operations &amp; BI Impact Deck</h2>
-      </div>
-      <button class="modal-close" id="closeModalBtn" aria-label="Close modal">✕</button>
-    </div>
-
-    <div class="wbr-grid-4" style="margin-bottom:20px;">
-      <div class="telemetry-box">
-        <div class="t-head"><span>CURRENT ROLE</span></div>
-        <div class="t-num" style="font-size:20px;">DoorDash</div>
-        <div class="t-delta">Wave 0 · Hyderabad GCC</div>
-        <p>Standing up Consumer, Dasher &amp; Merchant CX workflows from the ground up.</p>
-      </div>
-      <div class="telemetry-box">
-        <div class="t-head"><span>LEADERSHIP SCALE</span></div>
-        <div class="t-num" style="font-size:20px;">80+ Associates</div>
-        <div class="t-delta">4 TLs · 12+ Floor Supports</div>
-        <p>Sustained 95%+ SLA adherence with zero critical compliance breaches.</p>
-      </div>
-      <div class="telemetry-box">
-        <div class="t-head"><span>SIX SIGMA IMPACT</span></div>
-        <div class="t-num" style="font-size:20px;">+25% Prod.</div>
-        <div class="t-delta">-20% SLA Breaches</div>
-        <p>Delivered within 2 quarters via DMAIC, Pareto RCA, and CAPA governance.</p>
-      </div>
-      <div class="telemetry-box">
-        <div class="t-head"><span>BI AUTOMATION</span></div>
-        <div class="t-num" style="font-size:20px;">15+ Reports</div>
-        <div class="t-delta">500+ Hrs Saved/Yr</div>
-        <p>Eliminated 80% of reporting errors and boosted data accuracy by 30%.</p>
-      </div>
-    </div>
-
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:14px;border-top:1px solid var(--line);">
-      <span style="font-size:13px;color:var(--muted);">Ready for GitHub Pages deployment or 1-Page Executive PDF Print.</span>
-      <div style="display:flex;gap:10px;">
-        <button class="btn btn-secondary" onclick="window.print()" type="button">⎙ Print / Save PDF</button>
-        <a class="btn btn-primary" href="mailto:rupammlk9@gmail.com">✉ Contact Rupam</a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <footer>
-  © 2026 Rupam Mallick · Operations Leader · Customer Experience &amp; Analytics · Hyderabad, India
+  © 2026 Rupam Mallick · Operations, Transition &amp; Quality Leader · Lean Six Sigma Black Belt · Hyderabad, India
 </footer>
 
-<div class="toast" id="toast">Copied rupammlk9@gmail.com to clipboard!</div>
+<div class="toast" id="toast">Copied email to clipboard!</div>
 
 <script>
+  // 1. Live Interactive Telemetry Constellation Background Canvas
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouse = { x: null, y: null };
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  function initParticles() {
+    particles = [];
+    const count = Math.min(55, Math.floor((window.innerWidth * window.innerHeight) / 24000));
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 2 + 1,
+        accent: i % 5 === 0
+      });
+    }
+  }
+  initParticles();
+
+  function animateCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const nodeColor = isLight ? 'rgba(25,25,25,0.22)' : 'rgba(255,255,255,0.22)';
+    const lineColor = isLight ? 'rgba(255,48,8,0.08)' : 'rgba(255,48,8,0.12)';
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.accent ? '#FF3008' : nodeColor;
+      ctx.fill();
+
+      for (let j = i + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dx = p.x - p2.x;
+        const dy = p.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 135) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = lineColor;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animateCanvas);
+  }
+  animateCanvas();
+
+  // 2. Dark / Light Theme Switcher
   const themeToggle = document.getElementById('themeToggle');
   const htmlEl = document.documentElement;
   themeToggle.addEventListener('click', () => {
@@ -2187,21 +2441,95 @@ footer {
     htmlEl.setAttribute('data-theme', next);
   });
 
+  // 3. Executive Role Persona Switcher (Updates Hero & Filters Experience)
+  const personaData = {
+    all: {
+      sub: 'Transition & Contact Center Operations Leader | Vendor & Quality Governance | Analytics & Business Intelligence | AI-Enabled Efficiency',
+      sum: "Operations, Transition, and Quality leader with 5+ years of progressive experience in 24/7 global contact center and BPO operations. Led an 80+ member multi-tier organization (4 Team Leaders, 12+ Floor Supports) for a Fortune 500 US health insurer with 95%+ SLA adherence and zero critical compliance breaches, spearheaded end-to-end US-to-India healthcare transitions (UHG B2C), evaluated LLM mapping annotations (Waymo), and now stands up DoorDash's Wave 0 India Line of Business in Hyderabad across Consumer, Dasher, and Merchant support.",
+      filter: 'all'
+    },
+    doordash: {
+      sub: 'DoorDash Wave 0 Operations Leader | Community Operations & Customer Success | Consumer, Dasher & Merchant CX',
+      sum: "Wave 0 Operations Leader standing up DoorDash's India Line of Business from the ground up in the new Hyderabad GCC. Builds repeatable workflows across Consumer, Dasher, and Merchant support, rebalances resources in real time to protect 24/7 SLAs, presents WBR/MBR/QBR insights, and champions AI-enabled continuous improvement.",
+      filter: 'ops'
+    },
+    transition: {
+      sub: 'Transition & Contact Center Operations Leader | US Healthcare Offshore Transitions (UHG B2C) | HIPAA SPOC | LSSBB',
+      sum: 'Hands-on US healthcare transition leader experienced in taking new business from requirements and As-Is discovery through Knowledge Transfer (KT), shadowing/reverse shadowing, parallel run, go-live, and hypercare stabilization into steady-state BAU while sustaining 95%+ SLA adherence and 100% HIPAA compliance.',
+      filter: 'trans'
+    },
+    quality: {
+      sub: 'Quality Lead | AI & Human-in-the-Loop QA Frameworks | LLM Evaluation (Waymo) | Lean Six Sigma Black Belt',
+      sum: 'Quality and Operations leader who designs QA frameworks aligned with business outcomes, uses Nexidia and Observe.AI analytics to surface high-risk or ambiguous interactions for human review, evaluates LLM mapping annotations (Waymo), and partners with L&D to remediate quality gaps at the source via RCA/CAPA.',
+      filter: 'qa'
+    },
+    vendor: {
+      sub: 'Vendor Operations Manager | BPO Partner Performance | Real-Time BI & MIS Automation | Lean Six Sigma Black Belt',
+      sum: 'BPO and Vendor Operations leader who leads through influence across matrixed US and India stakeholder environments. Delivered a +25% productivity gain, -20% reduction in SLA breaches, and 15+ automated MIS pipelines (saving 500+ man-hours/yr and cutting reporting errors by 80%).',
+      filter: 'bi'
+    }
+  };
+
+  const personaBtns = document.querySelectorAll('.persona-btn');
+  const heroSubtitle = document.getElementById('heroSubtitle');
+  const heroSummary = document.getElementById('heroSummary');
+  const expBtns = document.querySelectorAll('[data-exp-filter]');
+  const jobItems = document.querySelectorAll('.job ul li');
+
+  function applyExpFilter(filter) {
+    expBtns.forEach(b => b.classList.toggle('active', b.dataset.expFilter === filter));
+    jobItems.forEach(li => {
+      if (filter === 'all') {
+        li.classList.remove('dimmed', 'highlighted');
+      } else {
+        const tags = (li.dataset.tags || '').split(' ');
+        if (tags.includes(filter)) {
+          li.classList.add('highlighted');
+          li.classList.remove('dimmed');
+        } else {
+          li.classList.add('dimmed');
+          li.classList.remove('highlighted');
+        }
+      }
+    });
+  }
+
+  personaBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      personaBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const p = personaData[btn.dataset.persona];
+      heroSubtitle.textContent = p.sub;
+      heroSummary.textContent = p.sum;
+      applyExpFilter(p.filter);
+    });
+  });
+
+  expBtns.forEach(btn => {
+    btn.addEventListener('click', () => applyExpFilter(btn.dataset.expFilter));
+  });
+
+  // 4. Hero Card 4-Tab Operational Switcher
   const lobCopy = {
     consumer: {
       title: 'Consumer (Cx) Support Operations',
       tag: 'SLA · CSAT · FCR',
-      desc: 'Owning response speed, quality governance, and AI-enabled continuous improvement across 24/7 live order and post-delivery support queues.'
+      desc: 'Standing up repeatable Wave 0 workflows in Hyderabad, rebalancing real-time resources across 24/7 queues, and driving support deflection and quality governance.'
     },
     dasher: {
       title: 'Dasher (Dx) Fleet Support Operations',
       tag: 'LIVE DISPATCH · AHT',
-      desc: 'Building repeatable Wave 0 workflows for real-time Dasher on-road support, pay/routing resolution, and queue SLA adherence.'
+      desc: 'Managing high-velocity 24/7 Dasher support queues, optimizing real-time dispatch & routing resolutions, and driving coaching through weekly 1-on-1s.'
     },
     merchant: {
       title: 'Merchant (Mx) Partner Experience',
       tag: 'PARTNER SLA · WBR',
-      desc: 'Driving store support excellence, order fulfillment troubleshooting, and actionable WBR/MBR/QBR insights for restaurant and retail partners.'
+      desc: 'Owning Merchant quality KPIs, store operational escalations, and presenting cross-functional WBR/MBR/QBR insights to leadership.'
+    },
+    aiqa: {
+      title: 'AI Analytics & LLM Quality Governance',
+      tag: 'OBSERVE.AI · WAYMO',
+      desc: 'Applying human judgment to AI-surfaced high-risk interactions (Observe.AI, Nexidia) and evaluating LLM mapping annotations (Waymo) to keep human review focused on high-signal cases.'
     }
   };
 
@@ -2223,6 +2551,7 @@ footer {
     });
   });
 
+  // 5. Analytical Deep-Dive Tabs
   const wbrTabs = document.querySelectorAll('.wbr-tab');
   const wbrPanes = document.querySelectorAll('.wbr-pane');
 
@@ -2235,32 +2564,7 @@ footer {
     });
   });
 
-  const expBtns = document.querySelectorAll('[data-exp-filter]');
-  const jobItems = document.querySelectorAll('.job ul li');
-
-  expBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      expBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.expFilter;
-
-      jobItems.forEach(li => {
-        if (filter === 'all') {
-          li.classList.remove('dimmed', 'highlighted');
-        } else {
-          const tags = (li.dataset.tags || '').split(' ');
-          if (tags.includes(filter)) {
-            li.classList.add('highlighted');
-            li.classList.remove('dimmed');
-          } else {
-            li.classList.add('dimmed');
-            li.classList.remove('highlighted');
-          }
-        }
-      });
-    });
-  });
-
+  // 6. Tech Stack Category Filter
   const toolBtns = document.querySelectorAll('[data-tool-filter]');
   const toolPills = document.querySelectorAll('.tool-pill');
 
@@ -2280,26 +2584,25 @@ footer {
     });
   });
 
-  const wbrModal = document.getElementById('wbrModal');
-  const openModalBtn = document.getElementById('openModalBtn');
-  const heroModalBtn = document.getElementById('heroModalBtn');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-
-  [openModalBtn, heroModalBtn].forEach(btn => {
-    btn.addEventListener('click', () => wbrModal.classList.add('open'));
-  });
-  closeModalBtn.addEventListener('click', () => wbrModal.classList.remove('open'));
-  wbrModal.addEventListener('click', (e) => {
-    if (e.target === wbrModal) wbrModal.classList.remove('open');
-  });
-
+  // 7. Copy Email & Built-In Self-Download HTML Button
   const copyBtn = document.getElementById('copyEmailBtn');
   const toast = document.getElementById('toast');
   copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText('rupammlk9@gmail.com').then(() => {
+      toast.textContent = 'Copied rupammlk9@gmail.com to clipboard!';
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 2600);
     });
+  });
+
+  document.getElementById('downloadHtmlBtn').addEventListener('click', () => {
+    const blob = new Blob([document.documentElement.outerHTML], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'index.html';
+    a.click();
+    URL.revokeObjectURL(url);
   });
 </script>
 </body>
