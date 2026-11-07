@@ -1,1 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rupam Mallick — Contact Center Operations Manager, Customer Experience, Analytics & Business Intelligence, Lean Six Sigma Black Belt.">
+<title>Rupam Mallick — Operations Leader | Customer Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dd-red:#FF3008;
+  --dd-red-dark:#D92806;
+  --dd-red-soft:#FFF0ED;
+  --ink:#191919;
+  --muted:#666666;
+  --soft:#F7F7F5;
+  --card:#FFFFFF;
+  --line:#E8E8E6;
+  --cream:#FFFDF9;
+  --green:#168B57;
+  --shadow:0 18px 50px rgba(25,25,25,.08);
+  --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',Arial,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.65;
+}
+a{color:inherit}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,253,249,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(232,232,230,.9);
+}
+.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Manrope';font-weight:800;font-size:18px;text-decoration:none}
+.brand span{color:var(--dd-red)}
+.links{display:flex;gap:6px;align-items:center}
+.links a{
+  text-decoration:none;font-size:13px;font-weight:600;
+  padding:9px 13px;border-radius:999px;color:#555;
+}
+.links a:hover{background:var(--dd-red-soft);color:var(--dd-red)}
+.cv-btn{
+  background:var(--dd-red)!important;color:white!important;
+  padding:10px 17px!important;
+}
+.cv-btn:hover{background:var(--dd-red-dark)!important}
+@media(max-width:720px){.links a:not(.cv-btn){display:none}}
 
+.hero{padding:92px 0 68px;background:
+  radial-gradient(circle at 90% 10%,rgba(255,48,8,.11),transparent 30%),
+  linear-gradient(180deg,#FFFDF9 0%,#FFF8F5 100%);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:55px;align-items:center}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr;text-align:center}}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  color:var(--dd-red);background:var(--dd-red-soft);
+  border:1px solid #FFD8D0;border-radius:999px;
+  padding:8px 14px;font-size:12px;font-weight:800;
+  letter-spacing:.4px;text-transform:uppercase;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--dd-red)}
+h1{
+  font-family:'Manrope';font-size:clamp(42px,7vw,74px);
+  line-height:.98;letter-spacing:-3px;margin:22px 0 18px;
+}
+.hero h1 span{color:var(--dd-red)}
+.subtitle{font-size:clamp(18px,2.3vw,23px);font-weight:600;max-width:720px}
+.summary{color:var(--muted);font-size:16px;max-width:730px;margin-top:18px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:800px){.actions{justify-content:center}}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 20px;border-radius:999px;text-decoration:none;
+  font-size:14px;font-weight:800;border:1px solid var(--line);
+}
+.btn-primary{background:var(--dd-red);color:#fff;border-color:var(--dd-red)}
+.btn-primary:hover{background:var(--dd-red-dark)}
+.btn-secondary{background:#fff;color:var(--ink)}
+.btn-secondary:hover{border-color:var(--dd-red);color:var(--dd-red)}
+.profile-card{
+  background:var(--ink);color:#fff;border-radius:30px;padding:30px;
+  box-shadow:var(--shadow);position:relative;overflow:hidden;
+}
+.profile-card:after{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:var(--dd-red);right:-70px;top:-70px;opacity:.9;
+}
+.initials{
+  width:96px;height:96px;border-radius:24px;background:var(--dd-red);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Manrope';font-size:32px;font-weight:800;position:relative;z-index:2;
+}
+.profile-card h2{font-family:'Manrope';font-size:25px;margin-top:24px;position:relative;z-index:2}
+.profile-card p{color:#CFCFCF;margin-top:6px;position:relative;z-index:2}
+.profile-meta{margin-top:25px;border-top:1px solid #333;padding-top:20px;display:grid;gap:10px;position:relative;z-index:2}
+.profile-meta div{font-size:13px;color:#DDD}
+.profile-meta b{color:#fff}
+
+.stats{padding:0 0 20px}
+.stat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:850px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.stat strong{display:block;font-family:'Manrope';font-size:25px;color:var(--dd-red)}
+.stat span{font-size:12px;color:var(--muted);display:block;margin-top:4px}
+
+section{padding:82px 0}
+.section-head{margin-bottom:32px}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:var(--dd-red)}
+.section-title{font-family:'Manrope';font-size:clamp(30px,4vw,44px);letter-spacing:-1.4px;margin-top:8px}
+.section-lede{color:var(--muted);max-width:720px;margin-top:10px}
+
+.experience{background:var(--soft)}
+.timeline{display:grid;gap:18px}
+.job{
+  background:#fff;border:1px solid var(--line);border-radius:24px;
+  padding:30px;position:relative;overflow:hidden;
+}
+.job:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--dd-red)}
+.job-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+@media(max-width:700px){.job-top{flex-direction:column}}
+.job h3{font-family:'Manrope';font-size:21px}
+.company{color:var(--dd-red);font-weight:800;margin-top:3px}
+.date{
+  white-space:nowrap;background:var(--dd-red-soft);color:var(--dd-red);
+  border-radius:999px;padding:7px 12px;font-size:11px;font-weight:800;
+}
+.job-sub{color:var(--muted);font-size:13px;margin:10px 0 18px}
+.job ul{padding-left:19px;color:#444}
+.job li{margin:8px 0;font-size:14px}
+.job li::marker{color:var(--dd-red)}
+
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:750px){.skills-grid{grid-template-columns:1fr}}
+.skill-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px}
+.skill-card h3{font-size:14px;color:var(--dd-red);text-transform:uppercase;letter-spacing:.8px}
+.skill-card p{color:#555;font-size:14px;margin-top:12px}
+
+.tools{background:var(--soft)}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{
+  padding:9px 13px;border-radius:999px;background:#fff;
+  border:1px solid var(--line);font-size:12.5px;font-weight:600;color:#444;
+}
+.pill:hover{border-color:var(--dd-red);color:var(--dd-red)}
+
+.credentials-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:750px){.credentials-grid{grid-template-columns:1fr}}
+.credential-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px}
+.credential-card h3{font-family:'Manrope';margin-bottom:15px}
+.clean{list-style:none}
+.clean li{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:#555}
+.clean li:last-child{border-bottom:0}
+.clean li:before{content:"✓";color:var(--dd-red);font-weight:900;margin-right:10px}
+
+.awards{
+  background:var(--ink);color:#fff;border-radius:30px;padding:46px;
+}
+.awards .eyebrow{color:#FF6A4D}
+.awards h2{font-family:'Manrope';font-size:34px;margin:7px 0 18px}
+.awards p{color:#D2D2D2;max-width:700px}
+.award-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.award{
+  background:#292929;border:1px solid #3B3B3B;border-radius:999px;
+  padding:10px 15px;font-size:12px;font-weight:700
+}
+
+.contact{padding-bottom:55px}
+.contact-box{
+  background:var(--dd-red);color:#fff;border-radius:30px;padding:48px;
+  display:flex;justify-content:space-between;gap:30px;align-items:center;
+}
+@media(max-width:750px){.contact-box{flex-direction:column;text-align:center}}
+.contact-box h2{font-family:'Manrope';font-size:34px}
+.contact-box p{margin-top:8px;color:#FFE8E3}
+.contact-links{display:flex;gap:10px;flex-wrap:wrap}
+.contact-links a{
+  background:#fff;color:var(--ink);padding:12px 17px;border-radius:999px;
+  text-decoration:none;font-size:13px;font-weight:800;
+}
+footer{text-align:center;padding:0 0 35px;color:#888;font-size:11px}
+
+@media(prefers-reduced-motion:no-preference){
+  .job,.stat,.skill-card,.credential-card{transition:transform .2s,box-shadow .2s}
+  .job:hover,.stat:hover,.skill-card:hover,.credential-card:hover{
+    transform:translateY(-3px);box-shadow:0 14px 35px rgba(25,25,25,.08)
+  }
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#">Rupam <span>Mallick</span></a>
+    <div class="links">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+      <a class="cv-btn" href="#contact">Let's Connect</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker"><span class="dot"></span> Operations Leader · Customer Experience</div>
+      <h1>Rupam <span>Mallick</span></h1>
+      <div class="subtitle">Contact Center Operations Manager | Analytics &amp; Business Intelligence | Stakeholder Management | Lean Six Sigma Black Belt</div>
+      <p class="summary">
+        Contact center operations leader with 5+ years of progressive experience, including leading a multi-tier team of 80+ operations associates through 4 Team Leaders and 12+ Floor Supports for a Fortune 500 US health insurance client. Combines hands-on contact center management with a strong analytics background.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="mailto:rupammlk9@gmail.com">Contact Me</a>
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/rupam-mallick-a135b720b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <aside class="profile-card">
+      <div class="initials">RM</div>
+      <h2>Operations &amp; CX Leader</h2>
+      <p>Hyderabad, Telangana, India</p>
+      <div class="profile-meta">
+        <div><b>Current:</b> Operations Leader — DoorDash</div>
+        <div><b>Focus:</b> Consumer · Dasher · Merchant Experience</div>
+        <div><b>Strength:</b> Operations + Analytics + Process Excellence</div>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<div class="container stats">
+  <div class="stat-grid">
+    <div class="stat"><strong>5+</strong><span>Years of progressive experience</span></div>
+    <div class="stat"><strong>80+</strong><span>Operations associates led</span></div>
+    <div class="stat"><strong>95%+</strong><span>Sustained SLA adherence</span></div>
+    <div class="stat"><strong>25%</strong><span>Productivity improvement</span></div>
+    <div class="stat"><strong>15+</strong><span>MIS reports automated</span></div>
+  </div>
+</div>
+
+<section id="experience" class="experience">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Professional Experience</div>
+      <h2 class="section-title">Building better operations.</h2>
+      <p class="section-lede">A progression from frontline customer service to multi-layer operations leadership, analytics and business process improvement.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="job">
+        <div class="job-top">
+          <div>
+            <h3>Operations Leader</h3>
+            <div class="company">DoorDash · Hyderabad, India</div>
+          </div>
+          <div class="date">Sept 2026 – Present</div>
+        </div>
+        <div class="job-sub">Customer Experience — Consumer, Dasher &amp; Merchant</div>
+        <ul>
+          <li>Part of Wave 0 standing up DoorDash's India Line of Business from the ground up in the new Hyderabad global capability centre, building repeatable operating workflows for Consumer, Dasher and Merchant support.</li>
+          <li>Own response and quality KPIs and SLA delivery across three lines of business in a 24/7 contact center environment.</li>
+          <li>Present performance trends and insights in Weekly, Monthly and Quarterly Business Reviews (WBR / MBR / QBR) to management and cross-functional stakeholders.</li>
+          <li>Analyze service metrics to identify patterns and performance gaps, and champion automation and AI-enabled continuous improvement to reduce manual effort.</li>
+          <li><b>Tools:</b> Salesforce, Observe.AI, Astra, THQ, Jira, Google Workspace.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-top">
+          <div>
+            <h3>Senior Team Leader (First Line Manager)</h3>
+            <div class="company">Wipro Ltd. · Kolkata, India</div>
+          </div>
+          <div class="date">Oct 2023 – Sept 2026</div>
+        </div>
+        <div class="job-sub">Insurance Services · Fortune 500 US Health Insurance Client</div>
+        <ul>
+          <li>Led a contact center operation of 80+ members through 4 Team Leaders and 12+ Floor Supports, sustaining 95%+ SLA adherence with zero critical compliance breaches.</li>
+          <li>Presented SLA, CSAT, AHT and productivity performance to senior client and vendor leaders using real-time MIS dashboards and trend reports, eliminating 80% of reporting errors.</li>
+          <li>Used Nexidia and Observe.AI analytics to identify high-risk interactions and dissatisfaction drivers early, improving CSAT, FCR and AHT.</li>
+          <li>Implemented performance management models that increased productivity by 25% and cut SLA breaches by 20% within two quarters.</li>
+          <li>Ran root cause analysis and CAPA on repeat defects using Pareto and defect analysis, converting findings into SOP updates.</li>
+          <li>Led Business Process Improvement using Lean Six Sigma (DMAIC) to re-engineer workflows and standardize processes.</li>
+          <li>Drove large-scale project implementations from requirements through launch and measurement, including transition of new business into the UHG B2C line.</li>
+          <li>Served as primary point of contact and escalation point for client and vendor leadership.</li>
+          <li>Served as HIPAA SPOC and Operational Risk Champion, ensuring audit, privacy and data-handling compliance.</li>
+          <li>Controlled shrinkage and attrition through engagement, recognition and early-warning interventions; led hiring and onboarding via ICIMS.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-top">
+          <div>
+            <h3>MIS Analyst / CCOD Executive</h3>
+            <div class="company">Wipro Ltd. · Kolkata, India</div>
+          </div>
+          <div class="date">Sept 2022 – Sept 2023</div>
+        </div>
+        <div class="job-sub">Insurance Services · Fortune 500 US Health Insurance Client</div>
+        <ul>
+          <li>Automated 15+ mission-critical MIS reports using Advanced Excel VBA, CCOD, Power BI and Pulse Channel Reporting, saving 500+ man-hours annually.</li>
+          <li>Built real-time dashboards tracking SLA, AHT, productivity, shrinkage and queue/backlog metrics; improved data accuracy by 30% through data validation frameworks.</li>
+          <li>Performed root cause analysis on KPI deviations and standardized reporting templates and SOPs to create a shared source of truth.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-top">
+          <div>
+            <h3>Subject Matter Expert (SME) / Floor Support</h3>
+            <div class="company">Wipro Ltd. · Kolkata, India</div>
+          </div>
+          <div class="date">Jan 2022 – Aug 2022</div>
+        </div>
+        <div class="job-sub">Insurance Services · Fortune 500 US Health Insurance Client</div>
+        <ul>
+          <li>First-line escalation handler for 50+ agents, protecting SLA, quality and productivity and reducing escalation volumes.</li>
+          <li>Ran Nexidia call audits, process refreshers and one-on-one coaching that improved CSAT and compliance.</li>
+          <li>Mentored and groomed 100+ new hires through structured coaching plans and onboarding.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-top">
+          <div>
+            <h3>Customer Service Representative</h3>
+            <div class="company">Wipro Ltd. · Kolkata, India</div>
+          </div>
+          <div class="date">May 2021 – Dec 2021</div>
+        </div>
+        <div class="job-sub">Insurance Services · Fortune 500 US Health Insurance Client</div>
+        <ul>
+          <li>Handled 50+ customer interactions daily with 99% CSAT, 98% First Call Resolution and 100% HIPAA compliance.</li>
+          <li>Reduced escalations by 95%; fast-tracked to SME within 12 months.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Core Competencies</div>
+      <h2 class="section-title">Where operations meets data.</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Contact Center Operations</h3>
+        <p>Contact Center Management, SLA Governance, AHT, CSAT, FCR, Workforce Management (IEX NICE), Quality Assurance, Shrinkage and Attrition Control, 24/7 Operations</p>
+      </div>
+      <div class="skill-card">
+        <h3>Analytics &amp; BI</h3>
+        <p>Data Analysis, Trend Analysis, KPI Definition, MIS Dashboards, Data Visualization, Data Validation, Interaction Analytics, Root Cause Analysis</p>
+      </div>
+      <div class="skill-card">
+        <h3>Leadership &amp; Stakeholders</h3>
+        <p>Leading Operations and Analytical Teams, Senior Stakeholder Management, Cross-Functional Collaboration, Thought Leadership, Executive Presentations (WBR / MBR / QBR), Data Storytelling</p>
+      </div>
+      <div class="skill-card">
+        <h3>Process Excellence</h3>
+        <p>Lean Six Sigma (DMAIC), Operational Excellence, Process Improvement, CAPA, Change Management, New Business Transition</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tools">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Technology</div>
+      <h2 class="section-title">Tools I work with.</h2>
+    </div>
+    <div class="pills">
+      <span class="pill">Advanced Excel (VBA)</span>
+      <span class="pill">Power BI</span>
+      <span class="pill">Tableau</span>
+      <span class="pill">Snowflake</span>
+      <span class="pill">PowerPoint</span>
+      <span class="pill">PowerApps</span>
+      <span class="pill">Salesforce</span>
+      <span class="pill">Observe.AI</span>
+      <span class="pill">Nexidia</span>
+      <span class="pill">IEX NICE</span>
+      <span class="pill">Assembled</span>
+      <span class="pill">Genesis Cloud</span>
+      <span class="pill">Jira</span>
+      <span class="pill">Confluence</span>
+      <span class="pill">Astra</span>
+      <span class="pill">THQ</span>
+      <span class="pill">Google Workspace</span>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Credentials</div>
+      <h2 class="section-title">Certifications &amp; recognition.</h2>
+    </div>
+    <div class="credentials-grid">
+      <div class="credential-card">
+        <h3>Certifications</h3>
+        <ul class="clean">
+          <li>Lean Six Sigma Black Belt (LSSBB)</li>
+          <li>Wipro People Manager Proficiency — Wipro x Harvard Business Publishing</li>
+          <li>HIPAA Certified</li>
+          <li>Operational Risk Management Certified</li>
+          <li>Train the Trainer (TTT) L2 — Master Trainer</li>
+          <li>Business Process Management (BPM) and Process Improvement</li>
+          <li>ICIMS Hiring and Onboarding</li>
+        </ul>
+      </div>
+      <div class="credential-card">
+        <h3>Education &amp; Languages</h3>
+        <ul class="clean">
+          <li>Bachelor of Arts — Scottish Church College, University of Calcutta (2018–2021)</li>
+          <li>English — Fluent</li>
+          <li>Hindi — Fluent</li>
+          <li>Bengali — Native</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:22px" class="awards">
+      <div class="eyebrow">Awards &amp; Recognition</div>
+      <h2>Performance that gets recognized.</h2>
+      <p>Recognition received during my Wipro journey for leadership, subject matter expertise and frontline production performance.</p>
+      <div class="award-row">
+        <span class="award">Best Team Leader 2024–25</span>
+        <span class="award">Best Team Leader 2025–26</span>
+        <span class="award">Best SME 2022–23</span>
+        <span class="award">Best Production Agent 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div>
+        <div class="eyebrow" style="color:#FFE0D9">Let's connect</div>
+        <h2>Build better customer operations.</h2>
+        <p>Open to conversations around operations leadership, customer experience, analytics and process excellence.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:rupammlk9@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/rupam-mallick-a135b720b/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Rupam Mallick · Operations Leader · Customer Experience
+</footer>
+</body>
+</html>
